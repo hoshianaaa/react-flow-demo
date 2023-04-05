@@ -53,7 +53,11 @@ const initialNodes: Node<NodeDataType>[] = [
   },
 ]
 
-const initialEdges: Edge[] = [{ id: 'e1-2', source: '1', target: '2' }]
+const initialEdges: Edge[] = [
+  { id: 'e1-2', source: '1', target: '2' },
+  { id: 'e2-3', source: '2', target: '3' },
+  { id: 'e3-4', source: '3', target: '4' },
+]
 
 const fitViewOptions: FitViewOptions = {
   padding: 0.2,
