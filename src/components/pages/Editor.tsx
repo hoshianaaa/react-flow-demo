@@ -2,6 +2,8 @@ import { EventNode } from '@/components/molecules/EventNode'
 import { EditorSidePanel } from '@/components/organisms/EditorSidePanel'
 import { useGetWindowSize } from '@/hooks/useGetWindowSize'
 import { useCallback, useState } from 'react'
+import { Ros, Topic, Message } from 'roslib';
+
 import ReactFlow, {
   addEdge,
   applyEdgeChanges,
@@ -106,8 +108,24 @@ export const Editor = () => {
   )
 
   const handleClick = () => {
-    console.log("aaa");
-    // implementation details
+
+   var ros = new Ros({
+    url: 'ws://localhost:9090'
+  });
+   
+   ros.on('connection', function() {
+    console.log('Connected to websocket server.');
+    });
+
+    ros.on('error', function(error) {
+    console.log('Error connecting to websocket server: ', error);
+    });
+
+    ros.on('close', function() {
+    console.log('Connection to websocket server closed.');
+    });
+        console.log("aaa");
+      // implementation details
   };
 
 
