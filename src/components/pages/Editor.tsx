@@ -25,16 +25,18 @@ export type NodeDataType = {
   color: string
 }
 
+// ノードの作成方法，種類: https://reactflow.dev/docs/api/nodes/node-types/
+
 const initialNodes: Node<NodeDataType>[] = [
   {
     id: '1',
     data: {
-      label: 'dig top point',
-      name: 'dig top point',
+      label: 'start',
+      name: 'start',
       color: 'red',
     },
     position: { x: 5, y: 5 },
-    //type: 'eventNode',
+    type: 'eventNode',
   },
   {
     id: '2',
@@ -53,10 +55,12 @@ const initialNodes: Node<NodeDataType>[] = [
   },
 ]
 
+// markerEnd: { type: MarkerType.ArrowClosed },を追加すると矢印がでる
 const initialEdges: Edge[] = [
   { id: 'e1-2', source: '1', target: '2' },
   { id: 'e2-3', source: '2', target: '3' },
   { id: 'e3-4', source: '3', target: '4' },
+  { id: 'e4-2', source: '4', target: '2' },
 ]
 
 const fitViewOptions: FitViewOptions = {
@@ -101,8 +105,18 @@ export const Editor = () => {
     [],
   )
 
+  const handleClick = () => {
+    console.log("aaa");
+    // implementation details
+  };
+
+
   return (
     <div style={{ height: windowHeight, width: windowWidth }}>
+    <button type="button" onClick={handleClick}>
+        Click Me
+      </button>
+
       {windowWidth > 0 && windowHeight > 0 ? (
         <ReactFlow
           nodes={nodes}
