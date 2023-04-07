@@ -128,22 +128,13 @@ export const Editor = () => {
     const cmdVel = new Topic({
 
       ros : ros,
-      name : '/turtle1/cmd_vel',
-      messageType : 'geometry_msgs/Twist'
+      name : '/ui/flow_data',
+      messageType : 'std_msgs/String'
 
     });
     const twist = new Message({
 
-        linear : {
-            x : 2.0,
-            y : 0,
-            z : 0
-        },
-        angular : {
-            x : 0,
-            y : 0,
-            z : 0
-        }
+      data: "hello"
 
     });
 
