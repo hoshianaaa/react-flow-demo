@@ -163,10 +163,10 @@ export const Editor = () => {
           node.style = { ...node.style, backgroundColor: '#2c8a8c' };
           console.log("nodebg debug");
         }
-//        else
- //       {
- //         node.style = { ...node.style, backgroundColor: '#FFFFFF' };
-  //      }
+       else
+      {
+        node.style = { ...node.style, backgroundColor: '#FFFFFF' };
+      }
 
         return node;
       })
@@ -250,10 +250,8 @@ export const Editor = () => {
   return (
     <div style={{ height: windowHeight, width: windowWidth }}>
     <button type="button" onClick={handleClick}>
-        Click Me --- 
+        Click Me ! 
     </button>
-        <label className="updatenode__bglabel">background:</label>
-        <input value={nodeBg} onChange={(evt) => setNodeBg(evt.target.value)} id="color_value"/>
       {windowWidth > 0 && windowHeight > 0 ? (
         <ReactFlow
           nodes={nodes}
