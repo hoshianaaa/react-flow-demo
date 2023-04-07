@@ -117,6 +117,15 @@ export const Editor = () => {
       //console.log("** nodes **");
       //console.log(nodes);
       //nodeBg = id;
+
+      setNodeBg(id);
+
+      //console.log(id);
+      //document.getElementById("color_value").value = id;
+
+
+/*
+/*
       console.log("sub",nodeBg);
       var len = nodes.length;
       for (var i=0;i<len;i++)
@@ -133,9 +142,10 @@ export const Editor = () => {
        // console.log(nodes[i]);
       }
       //nodeBg = '#2c8a8c';
+      */
 
     });
-    listener_setting = 1;
+ //   listener_setting = 1;
  // };
 
 
@@ -241,7 +251,7 @@ export const Editor = () => {
         Click Me --- 
     </button>
         <label className="updatenode__bglabel">background:</label>
-        <input value={nodeBg} onChange={(evt) => setNodeBg(evt.target.value)} />
+        <input value={nodeBg} onChange={(evt) => setNodeBg(evt.target.value)} id="color_value"/>
       {windowWidth > 0 && windowHeight > 0 ? (
         <ReactFlow
           nodes={nodes}
