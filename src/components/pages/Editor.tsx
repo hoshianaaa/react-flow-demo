@@ -42,18 +42,18 @@ const initialNodes: Node<NodeDataType>[] = [
   },
   {
     id: '2',
-    data: { label: 'down_arm', name: 'down_arm', color: '#FF5660' },
+    data: { label: 'down_arm', name: 'down_arm'},
     position: { x: 5, y: 100 },
     style: { border: '1px solid #777', padding: 10, background: '#2c8a8c' },
   },
   {
     id: '3',
-    data: { label: 'move', name: 'move', color: '#FF5660' },
+    data: { label: 'move', name: 'move'},
     position: { x: 5, y: 200 },
   },
   {
     id: '4',
-    data: { label: 'up_arm', name: 'up_arm', color: '#FF5660' },
+    data: { label: 'up_arm', name: 'up_arm'},
     position: { x: 5, y: 300 },
   },
 
@@ -195,6 +195,7 @@ export const Editor = () => {
           settings={{ sampleProperty: 'aaa' }}
         />
       )}
+
     </div>
   )
 }
