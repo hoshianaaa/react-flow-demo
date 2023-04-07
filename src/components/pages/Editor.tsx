@@ -124,7 +124,32 @@ export const Editor = () => {
     ros.on('close', function() {
     console.log('Connection to websocket server closed.');
     });
-        console.log("aaa");
+
+    const cmdVel = new Topic({
+
+      ros : ros,
+      name : '/turtle1/cmd_vel',
+      messageType : 'geometry_msgs/Twist'
+
+    });
+    const twist = new Message({
+
+        linear : {
+            x : 2.0,
+            y : 0,
+            z : 0
+        },
+        angular : {
+            x : 0,
+            y : 0,
+            z : 0
+        }
+
+    });
+
+    cmdVel.publish(twist);
+
+          console.log("aaa");
       // implementation details
   };
 
