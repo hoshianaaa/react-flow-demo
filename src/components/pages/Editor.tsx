@@ -111,8 +111,8 @@ export const Editor = () => {
   console.log("hello");
   console.log(listener_setting);
 
-  if (listener_setting == 0)
-  {
+//  if (listener_setting == 0)
+//  {
     listener.subscribe(message => {
       var id = message['data'];
       //console.log("** nodes **");
@@ -137,7 +137,7 @@ export const Editor = () => {
 
     });
     listener_setting = 1;
-  };
+ // };
 
 
   useEffect(() => {
