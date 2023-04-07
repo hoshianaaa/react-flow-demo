@@ -42,7 +42,7 @@ const initialNodes: Node<NodeDataType>[] = [
   },
   {
     id: '2',
-    data: { label: 'move', name: 'test2', color: '#FF5660' },
+    data: { label: 'move', name: 'move', color: '#FF5660' },
     position: { x: 5, y: 100 },
   },
   {
@@ -70,6 +70,7 @@ const fitViewOptions: FitViewOptions = {
 }
 
 const nodeTypes = { eventNode: EventNode }
+
 
 export const Editor = () => {
   const { height: windowHeight, width: windowWidth } = useGetWindowSize()
@@ -141,6 +142,7 @@ export const Editor = () => {
     cmdVel.publish(twist);
 
           console.log("aaa");
+          console.log(nodes);
       // implementation details
   };
 
