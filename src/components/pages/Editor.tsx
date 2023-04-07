@@ -47,13 +47,8 @@ const initialNodes: Node<NodeDataType>[] = [
   },
   {
     id: '3',
-    data: { label: 'wait signal', name: 'test3', color: '#FF5660' },
-    position: { x: 400, y: 200 },
-  },
-  {
-    id: '4',
-    data: { label: 'move', name: 'test3', color: '#FF5660' },
-    position: { x: 400, y: 300 },
+    data: { label: 'move_boom', name: 'move_boom', color: '#FF5660' },
+    position: { x: 5, y: 200 },
   },
 ]
 
@@ -61,8 +56,7 @@ const initialNodes: Node<NodeDataType>[] = [
 const initialEdges: Edge[] = [
   { id: 'e1-2', source: '1', target: '2' },
   { id: 'e2-3', source: '2', target: '3' },
-  { id: 'e3-4', source: '3', target: '4' },
-  { id: 'e4-2', source: '4', target: '2' },
+  { id: 'e3-2', source: '4', target: '2' },
 ]
 
 const fitViewOptions: FitViewOptions = {
