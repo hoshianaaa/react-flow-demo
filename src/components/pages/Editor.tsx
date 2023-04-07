@@ -133,10 +133,27 @@ export const Editor = () => {
     name: '/ui/active_ids',
     messageType: 'std_msgs/String'
   });
+
   listener.subscribe(message => {
     var id = message['data'];
     console.log("** nodes **");
-    console.log(nodes);
+    //console.log(nodes);
+    var len = nodes.length;
+    for (var i=0;i<len;i++)
+    {
+      if(nodes[i]['id'] == id)
+      {
+        console.log("ok");
+        nodes[i]['style'] = { border: '1px solid #777', padding: 10, background: '#2c8a8c' };
+      }
+      else
+      {
+        nodes[i]['style'] = { border: '1px solid #777', padding: 10, background: '#FFFFFF' };
+
+      }
+
+      console.log(nodes[i]);
+    }
 
   });
 
