@@ -155,10 +155,12 @@ export const Editor = () => {
         console.log("***** nodeBg *****");
         console.log(nodeBg);
         console.log(node.id);
-        if (node.id === '1') {
+        //if (node.id === '1') {
+        if (node.id === nodeBg) {
           // it's important that you create a new object here
           // in order to notify react flow about the change
-          node.style = { ...node.style, backgroundColor: nodeBg };
+          //node.style = { ...node.style, backgroundColor: nodeBg };
+          node.style = { ...node.style, backgroundColor: '#2c8a8c' };
           console.log("nodebg debug");
         }
 //        else
