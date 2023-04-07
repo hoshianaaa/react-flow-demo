@@ -50,6 +50,13 @@ const initialNodes: Node<NodeDataType>[] = [
     data: { label: 'move_boom', name: 'move_boom', color: '#FF5660' },
     position: { x: 5, y: 200 },
   },
+  {
+    id: '4',
+    type: 'output',
+    data: { label: 'finish', name: 'finish', color: 'blue' },
+    position: { x: 5, y: 300 },
+  },
+
 ]
 
 // markerEnd: { type: MarkerType.ArrowClosed },を追加すると矢印がでる
@@ -123,22 +130,38 @@ export const Editor = () => {
     const cmdVel = new Topic({
 
       ros : ros,
-      name : '/ui/flow_data',
+      name : '/ui/flow/nodes',
       messageType : 'std_msgs/String'
 
     });
     const twist = new Message({
 
-      data: "hello"
+      data: JSON.stringify(nodes)
 
     });
 
     cmdVel.publish(twist);
 
-          console.log("aaa");
-          console.log(JSON.stringify(nodes));
-          console.log(JSON.stringify(edges));
-      // implementation details
+    setTimeout(function () {
+
+      const cmdVel2 = new Topic({
+
+        ros : ros,
+        name : '/ui/flow/edges',
+        messageType : 'std_msgs/String'
+
+      });
+      const twist2 = new Message({
+
+        data: JSON.stringify(edges)
+
+      });
+
+      cmdVel2.publish(twist2);
+
+    }, 500);
+
+
   };
 
 
