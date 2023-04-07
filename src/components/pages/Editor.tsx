@@ -104,9 +104,8 @@ export const Editor = () => {
   const [nodes, setNodes] = useState<Node[]>(initialNodes)
   const [edges, setEdges] = useState<Edge[]>(initialEdges)
   //useStateサンプル: https://reactflow.dev/docs/examples/nodes/update-node/
-  const [nodeBg, setNodeBg] = useState('1');
+  const [nodeBg, setNodeBg] = useState('#FFFFFF');
   const [selectedNode, setSelectedNode] = useState<Node | null>(null)
-
 
   console.log("hello");
   console.log(listener_setting);
@@ -122,7 +121,7 @@ export const Editor = () => {
       var len = nodes.length;
       for (var i=0;i<len;i++)
       {
-        if(nodes[i]['id'] == id)
+        if(nodes[i]['id'] == 1)
         {
           console.log("ok");
           nodes[i]['style'] = { border: '1px solid #777', padding: 10, background: '#2c8a8c'};
@@ -146,16 +145,16 @@ export const Editor = () => {
         console.log("***** nodeBg *****");
         console.log(nodeBg);
         console.log(node.id);
-        if (node.id === nodeBg) {
+        if (node.id === '1') {
           // it's important that you create a new object here
           // in order to notify react flow about the change
-          node.style = { ...node.style, backgroundColor: '#2c8a8c' };
+          node.style = { ...node.style, backgroundColor: nodeBg };
           console.log("nodebg debug");
         }
-        else
-        {
+//        else
+ //       {
  //         node.style = { ...node.style, backgroundColor: '#FFFFFF' };
-        }
+  //      }
 
         return node;
       })
@@ -239,9 +238,10 @@ export const Editor = () => {
   return (
     <div style={{ height: windowHeight, width: windowWidth }}>
     <button type="button" onClick={handleClick}>
-        Click Me
+        Click Me --- 
     </button>
-
+        <label className="updatenode__bglabel">background:</label>
+        <input value={nodeBg} onChange={(evt) => setNodeBg(evt.target.value)} />
       {windowWidth > 0 && windowHeight > 0 ? (
         <ReactFlow
           nodes={nodes}
@@ -255,8 +255,9 @@ export const Editor = () => {
           fitView
           fitViewOptions={fitViewOptions}
         >
-          <Controls />
-          <Background style={{ backgroundColor: '#f5f5f5' }} />
+
+              <Controls />
+           <Background style={{ backgroundColor: '#f5f5f5' }} />
         </ReactFlow>
       ) : undefined}
       {selectedNode && (
