@@ -1,7 +1,7 @@
 import { EventNode } from '@/components/molecules/EventNode'
 import { EditorSidePanel } from '@/components/organisms/EditorSidePanel'
 import { useGetWindowSize } from '@/hooks/useGetWindowSize'
-import { useCallback, useState, useEffect } from 'react'
+import { useCallback, useState } from 'react'
 import { Ros, Topic, Message } from 'roslib';
 
 import ReactFlow, {
@@ -102,28 +102,7 @@ export const Editor = () => {
   const { height: windowHeight, width: windowWidth } = useGetWindowSize()
   const [nodes, setNodes] = useState<Node[]>(initialNodes)
   const [edges, setEdges] = useState<Edge[]>(initialEdges)
-  //useStateサンプル: https://reactflow.dev/docs/examples/nodes/update-node/
-  const [nodeBg, setNodeBg] = useState("#FFFFFF");
   const [selectedNode, setSelectedNode] = useState<Node | null>(null)
-
-  useEffect(() => {
-    setNodes((nds) =>
-      nds.map((node) => {
-        console.log("***** nodeBg *****");
-        console.log(nodeBg);
-        console.log(node.id);
-        if (node.id === '1') {
-          // it's important that you create a new object here
-          // in order to notify react flow about the change
-          node.style = { ...node.style, backgroundColor: nodeBg };
-          console.log("nodebg debug");
-        }
-
-        return node;
-      })
-    );
-  }, [nodeBg, setNodes]);
-
 
 // react useCallbak 使い方: https://weseek.co.jp/tech/3917/
   const onNodesChange = useCallback(
@@ -158,24 +137,23 @@ export const Editor = () => {
 
   listener.subscribe(message => {
     var id = message['data'];
-    //console.log("** nodes **");
+    console.log("** nodes **");
     //console.log(nodes);
     var len = nodes.length;
     for (var i=0;i<len;i++)
     {
       if(nodes[i]['id'] == id)
       {
-        //console.log("ok");
-       // nodes[i]['style'] = { border: '1px solid #777', padding: 10, background: '#2c8a8c' };
+        console.log("ok");
+        nodes[i]['style'] = { border: '1px solid #777', padding: 10, background: '#2c8a8c' };
       }
       else
       {
-      //  nodes[i]['style'] = { border: '1px solid #777', padding: 10, background: '#FFFFFF' };
+        nodes[i]['style'] = { border: '1px solid #777', padding: 10, background: '#FFFFFF' };
+
       }
-     // console.log(nodes[i]);
+      console.log(nodes[i]);
     }
-    //nodeBg = id;
-    nodeBg = '#2c8a8c';
 
   });
 
@@ -223,7 +201,7 @@ export const Editor = () => {
     <div style={{ height: windowHeight, width: windowWidth }}>
     <button type="button" onClick={handleClick}>
         Click Me
-    </button>
+      </button>
 
       {windowWidth > 0 && windowHeight > 0 ? (
         <ReactFlow
