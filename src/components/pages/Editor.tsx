@@ -110,23 +110,37 @@ export const Editor = () => {
     [],
   )
 
-  const handleClick = () => {
+// ros websocket setting 
 
-   var ros = new Ros({
+  var ros = new Ros({
     url: 'ws://localhost:9090'
   });
    
-   ros.on('connection', function() {
+  ros.on('connection', function() {
     console.log('Connected to websocket server.');
-    });
+  });
 
-    ros.on('error', function(error) {
+  ros.on('error', function(error) {
     console.log('Error connecting to websocket server: ', error);
-    });
+  });
 
-    ros.on('close', function() {
+  ros.on('close', function() {
     console.log('Connection to websocket server closed.');
-    });
+  });
+
+  const listener = new Topic({
+    ros: ros,
+    name: '/ui/active_ids',
+    messageType: 'std_msgs/String'
+  });
+  listener.subscribe(message => {
+    var id = message['data'];
+    console.log("** nodes **");
+    console.log(nodes);
+
+  });
+
+  const handleClick = () => {
 
     const cmdVel = new Topic({
 
