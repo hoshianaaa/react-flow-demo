@@ -13,7 +13,6 @@ export const EditorSidePanel = ({ settings, node }: EditorSidePanelProps) => {
         className="rounded-t-2xl h-4"
         style={{ backgroundColor: node.data.color }}
       />
-      <p> === config === </p>
       <p> 関数名: {node.data.name} </p>
     </div>
   )
