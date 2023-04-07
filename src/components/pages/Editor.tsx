@@ -142,7 +142,8 @@ export const Editor = () => {
     cmdVel.publish(twist);
 
           console.log("aaa");
-          console.log(nodes);
+          console.log(JSON.stringify(nodes));
+          console.log(JSON.stringify(edges));
       // implementation details
   };
 
