@@ -97,14 +97,48 @@ const nodeTypes = { eventNode: EventNode }
     messageType: 'std_msgs/String'
   });
 
+var listener_setting = 0;
 
 export const Editor = () => {
   const { height: windowHeight, width: windowWidth } = useGetWindowSize()
   const [nodes, setNodes] = useState<Node[]>(initialNodes)
   const [edges, setEdges] = useState<Edge[]>(initialEdges)
   //useStateサンプル: https://reactflow.dev/docs/examples/nodes/update-node/
-  const [nodeBg, setNodeBg] = useState("#FFFFFF");
+  const [nodeBg, setNodeBg] = useState('1');
   const [selectedNode, setSelectedNode] = useState<Node | null>(null)
+
+
+  console.log("hello");
+  console.log(listener_setting);
+
+  if (listener_setting == 0)
+  {
+    listener.subscribe(message => {
+      var id = message['data'];
+      //console.log("** nodes **");
+      //console.log(nodes);
+      //nodeBg = id;
+      console.log("sub",nodeBg);
+      var len = nodes.length;
+      for (var i=0;i<len;i++)
+      {
+        if(nodes[i]['id'] == id)
+        {
+          console.log("ok");
+          nodes[i]['style'] = { border: '1px solid #777', padding: 10, background: '#2c8a8c'};
+        }
+        else
+        {
+          nodes[i]['style'] = { border: '1px solid #777', padding: 10, background: '#FFFFFF' };
+        }
+       // console.log(nodes[i]);
+      }
+      //nodeBg = '#2c8a8c';
+
+    });
+    listener_setting = 1;
+  };
+
 
   useEffect(() => {
     setNodes((nds) =>
@@ -112,11 +146,15 @@ export const Editor = () => {
         console.log("***** nodeBg *****");
         console.log(nodeBg);
         console.log(node.id);
-        if (node.id === '1') {
+        if (node.id === nodeBg) {
           // it's important that you create a new object here
           // in order to notify react flow about the change
-          node.style = { ...node.style, backgroundColor: nodeBg };
+          node.style = { ...node.style, backgroundColor: '#2c8a8c' };
           console.log("nodebg debug");
+        }
+        else
+        {
+ //         node.style = { ...node.style, backgroundColor: '#FFFFFF' };
         }
 
         return node;
@@ -156,29 +194,6 @@ export const Editor = () => {
     [],
   )
 
-  listener.subscribe(message => {
-    var id = message['data'];
-    //console.log("** nodes **");
-    //console.log(nodes);
-    var len = nodes.length;
-    for (var i=0;i<len;i++)
-    {
-      if(nodes[i]['id'] == id)
-      {
-        //console.log("ok");
-       // nodes[i]['style'] = { border: '1px solid #777', padding: 10, background: '#2c8a8c' };
-      }
-      else
-      {
-      //  nodes[i]['style'] = { border: '1px solid #777', padding: 10, background: '#FFFFFF' };
-      }
-     // console.log(nodes[i]);
-    }
-    //nodeBg = id;
-    nodeBg = '#2c8a8c';
-
-  });
-
   const handleClick = () => {
 
     const cmdVel = new Topic({
@@ -214,6 +229,8 @@ export const Editor = () => {
       cmdVel2.publish(twist2);
 
     }, 500);
+
+    Editor();
 
 
   };
