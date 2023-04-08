@@ -115,8 +115,8 @@ export const Editor = () => {
   console.log("hello");
   console.log(listener_setting);
 
-//  if (listener_setting == 0)
-//  {
+  if (listener_setting == 0)
+  {
     listener.subscribe(message => {
       var id = message['data'];
       //console.log("** nodes **");
@@ -128,11 +128,10 @@ export const Editor = () => {
       //console.log(id);
       //document.getElementById("color_value").value = id;
 
-
+      listener_setting = 1;
 
     });
- //   listener_setting = 1;
- // };
+  };
 
 
   useEffect(() => {
@@ -228,8 +227,6 @@ export const Editor = () => {
       cmdVel2.publish(twist2);
 
     }, 500);
-
-//    Editor();
 
 
   };
