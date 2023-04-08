@@ -133,7 +133,6 @@ export const Editor = () => {
     });
   };
 
-
   useEffect(() => {
     setNodes((nds) =>
       nds.map((node) => {
@@ -227,6 +226,19 @@ export const Editor = () => {
       cmdVel2.publish(twist2);
 
     }, 500);
+
+    const newNode = 
+      {
+        id: '5',
+        data: {
+          label: 'start',
+          name: 'start',
+          color: 'red',
+        },
+        position: { x: 100, y: 100 },
+      };
+
+    setNodes((nds) => nds.concat(newNode));
 
 
   };
