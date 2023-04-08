@@ -68,6 +68,8 @@ const initialNodes: Node<NodeDataType>[] = [
       name: 'start',
     },
     position: { x: 5, y: 5 },
+    deletable: 0,
+    type: 'input',
   },
   {
     id: '2',
