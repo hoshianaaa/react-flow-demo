@@ -35,3 +35,4 @@ adaptive node eidtor
 adaptive flow editor
 adaptable node-graph eidtor
 
+adaptable graph editor
