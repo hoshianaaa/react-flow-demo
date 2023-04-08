@@ -55,7 +55,6 @@ import ReactFlow, {
 
 const nodeTypes = { 
   eventNode: EventNode,
-  resizableNode: ResizableNode,
 }
 
 // TODO: 一旦ここに書いてあるが、この部分がPluginごとに異なる部分になる想定
