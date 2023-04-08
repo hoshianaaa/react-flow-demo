@@ -25,3 +25,12 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 - react-flow
 
 
+### 命名
+
+
+何をするもの? --- node非定義型の node-graph 作成UI
+
+adaptable node editor
+adaptive node eidtor
+adaptive flow editor
+
