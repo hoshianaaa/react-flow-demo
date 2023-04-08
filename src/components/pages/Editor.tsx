@@ -27,6 +27,10 @@ const treeData = [
     key: 'move',
     label: 'move',
   },
+  {
+    key: 'back',
+    label: 'back',
+  },
 ];
 
 import ReactFlow, {
