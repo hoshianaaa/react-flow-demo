@@ -14,7 +14,6 @@ import 'node_modules/react-simple-tree-menu/dist/main.css';
 //import 'src/components/pages/treemenu.css';
 
 
-
 // as an array
 const treeData = [
   {
