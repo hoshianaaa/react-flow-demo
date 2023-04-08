@@ -242,25 +242,6 @@ export const Editor = () => {
       cmdVel2.publish(twist2);
 
     }, 500);
-
-    const newNode = 
-      {
-        id: '5',
-        data: {
-          label: 'start',
-          name: 'start',
-          color: 'red',
-        },
-        position: { x: 100, y: 100 },
-        style: {
-          backgroundColor: 'transparent',
-          border: '1px solid #F331F5',
-          color: '#F331F5',
-        }
-      };
-
-    setNodes((nds) => nds.concat(newNode));
-
   };
 
 
@@ -273,6 +254,34 @@ export const Editor = () => {
         onClickItem={({ key, label, ...props }) => {
           //this.navigate(props.url); // user defined prop
           console.log(key, label);
+
+          // *** add node ***
+
+          var new_id = Number(nodes.length) + 1;
+          console.log("***nodes.length***");
+          console.log(typeof nodes.length);
+          console.log(typeof '6');
+          console.log(typeof '6');
+
+          const newNode = 
+            {
+              id: new_id.toString(),
+              data: {
+                label: key,
+                name: key,
+                color: 'red',
+              },
+              position: { x: 100, y: 100 },
+              style: {
+                backgroundColor: 'transparent',
+                border: '1px solid #F331F5',
+                color: '#F331F5',
+              }
+            };
+
+          setNodes((nds) => nds.concat(newNode));
+
+
         }}>
       </TreeMenu>
       <button type="button" onClick={handleClick}>
