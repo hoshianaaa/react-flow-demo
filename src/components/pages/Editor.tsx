@@ -1,11 +1,8 @@
 // react-flow samples CodeSsandbox: https://codesandbox.io/examples/package/react-flow
 // add node sample: https://reactflow.dev/docs/examples/nodes/add-node-on-edge-drop/
 // *** 階層メニュー react ***
-// side bar react
-// - アコーディオンメニュー
-// ナビゲーション react
-// 開閉式ツリー型メニュー: https://phpjavascriptroom.com/?t=js&p=tips_node
-// これ良さそう: https://reactjsexample.com/a-simple-react-tree-menu-component/
+// tree menu react
+// https://github.com/iannbing/react-simple-tree-menu
 
 import { EventNode } from '@/components/molecules/EventNode'
 import { EditorSidePanel } from '@/components/organisms/EditorSidePanel'
