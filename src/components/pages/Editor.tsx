@@ -141,7 +141,8 @@ export const Editor = () => {
           // it's important that you create a new object here
           // in order to notify react flow about the change
           //node.style = { ...node.style, backgroundColor: nodeBg };
-          node.style = { ...node.style, backgroundColor: '#2c8a8c' };
+         // node.style = { ...node.style, backgroundColor: '#2c8a8c' };
+          node.style = { ...node.style, backgroundColor: 'rgba(255,105,212,0.3)', border: '1px solid #F331F5', color: '#F331F5' };
           console.log("nodebg debug");
         }
        else
