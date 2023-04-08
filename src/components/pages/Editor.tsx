@@ -270,7 +270,8 @@ export const Editor = () => {
     <div style={{ height: windowHeight, width: windowWidth , display: 'flex'}}>
 
       <div>
-        <TreeMenu data={treeData}
+        <TreeMenu data={treeData} 
+          hasSearch='false'
           onClickItem={({ key, label, ...props }) => {
             //this.navigate(props.url); // user defined prop
             console.log(key, label);
