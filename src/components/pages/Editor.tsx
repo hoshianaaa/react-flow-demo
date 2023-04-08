@@ -14,7 +14,7 @@ import 'node_modules/react-simple-tree-menu/dist/main.css';
 
 // *** react view ***
 // https://www.npmjs.com/package/react-view
-import {View, PropTypes} from 'react-view';
+//import {View, PropTypes} from 'react-view';
 
 
 // as an array
@@ -285,7 +285,7 @@ export const Editor = () => {
   return (
     
 
-    <div style={{ height: windowHeight, width: windowWidth , flex: 1, flexDirection: 'row'}}>
+    <div style={{ height: windowHeight, width: windowWidth , display: 'flex'}}>
 
       <TreeMenu data={treeData}
         onClickItem={({ key, label, ...props }) => {
