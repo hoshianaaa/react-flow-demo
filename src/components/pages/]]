@@ -1,5 +1,3 @@
-// react-flow samples CodeSsandbox: https://codesandbox.io/examples/package/react-flow
-
 import { EventNode } from '@/components/molecules/EventNode'
 import { EditorSidePanel } from '@/components/organisms/EditorSidePanel'
 import { useGetWindowSize } from '@/hooks/useGetWindowSize'
