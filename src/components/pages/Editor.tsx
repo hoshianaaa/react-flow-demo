@@ -229,7 +229,7 @@ export const Editor = () => {
 
     }, 500);
 
-    Editor();
+//    Editor();
 
 
   };
