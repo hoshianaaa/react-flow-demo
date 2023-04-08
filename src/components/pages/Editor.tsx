@@ -1,8 +1,5 @@
 // react-flow samples CodeSsandbox: https://codesandbox.io/examples/package/react-flow
 // add node sample: https://reactflow.dev/docs/examples/nodes/add-node-on-edge-drop/
-// *** 階層メニュー react ***
-// tree menu react
-// https://github.com/iannbing/react-simple-tree-menu
 
 import { EventNode } from '@/components/molecules/EventNode'
 import { EditorSidePanel } from '@/components/organisms/EditorSidePanel'
@@ -11,8 +8,14 @@ import { useCallback, useState, useEffect, useRef } from 'react'
 import { Ros, Topic, Message } from 'roslib';
 
 // *** tree menu ***
+// https://github.com/iannbing/react-simple-tree-menu
 import TreeMenu from 'react-simple-tree-menu'
 import 'node_modules/react-simple-tree-menu/dist/main.css';
+
+// *** react view ***
+// https://www.npmjs.com/package/react-view
+import {View, PropTypes} from 'react-view';
+
 
 // as an array
 const treeData = [
@@ -282,7 +285,7 @@ export const Editor = () => {
   return (
     
 
-    <div style={{ height: windowHeight, width: windowWidth }}>
+    <div style={{ height: windowHeight, width: windowWidth , flex: 1, flexDirection: 'row'}}>
 
       <TreeMenu data={treeData}
         onClickItem={({ key, label, ...props }) => {
