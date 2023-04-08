@@ -12,11 +12,6 @@ import { Ros, Topic, Message } from 'roslib';
 import TreeMenu from 'react-simple-tree-menu'
 import 'node_modules/react-simple-tree-menu/dist/main.css';
 
-// *** react view ***
-// https://www.npmjs.com/package/react-view
-//import {View, PropTypes} from 'react-view';
-
-
 // as an array
 const treeData = [
   {
