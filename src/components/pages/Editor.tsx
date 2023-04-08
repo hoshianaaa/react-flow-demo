@@ -37,6 +37,11 @@ const treeData = [
     key: 'first-level-node-2',
     label: 'Node 2 at the first level',
   },
+  {
+    key: 'first-level-node-3',
+    label: 'Node 2 at the first level',
+  },
+
 ];
 
 import ReactFlow, {
@@ -278,34 +283,40 @@ export const Editor = () => {
     
 
     <div style={{ height: windowHeight, width: windowWidth }}>
-    <TreeMenu data={treeData} />
-    <button type="button" onClick={handleClick}>
-        Click Me ! 
-    </button>
-      {windowWidth > 0 && windowHeight > 0 ? (
-        <ReactFlow
-          nodes={nodes}
-          edges={edges}
-          onNodesChange={onNodesChange}
-          onEdgesChange={onEdgesChange}
-          onConnect={onConnect}
-          onEdgeUpdate={onEdgeUpdate}
-          nodeTypes={nodeTypes}
-          onSelectionChange={onSelectionChange}
-          fitView
-          fitViewOptions={fitViewOptions}
-        >
 
-              <Controls />
-           <Background style={{ backgroundColor: 'black' }} />
-        </ReactFlow>
-      ) : undefined}
-      {selectedNode && (
-        <EditorSidePanel
-          node={selectedNode}
-          settings={{ sampleProperty: 'aaa' }}
-        />
-      )}
+      <TreeMenu data={treeData}
+        onClickItem={({ key, label, ...props }) => {
+          //this.navigate(props.url); // user defined prop
+          console.log(key, label);
+        }}>
+      </TreeMenu>
+      <button type="button" onClick={handleClick}>
+          Click Me ! 
+      </button>
+        {windowWidth > 0 && windowHeight > 0 ? (
+          <ReactFlow
+            nodes={nodes}
+            edges={edges}
+            onNodesChange={onNodesChange}
+            onEdgesChange={onEdgesChange}
+            onConnect={onConnect}
+            onEdgeUpdate={onEdgeUpdate}
+            nodeTypes={nodeTypes}
+            onSelectionChange={onSelectionChange}
+            fitView
+            fitViewOptions={fitViewOptions}
+          >
+
+                <Controls />
+             <Background style={{ backgroundColor: 'black' }} />
+          </ReactFlow>
+        ) : undefined}
+        {selectedNode && (
+          <EditorSidePanel
+            node={selectedNode}
+            settings={{ sampleProperty: 'aaa' }}
+          />
+        )}
 
     </div>
   )
