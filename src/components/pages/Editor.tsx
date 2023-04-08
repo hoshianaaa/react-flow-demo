@@ -12,8 +12,6 @@ import { Ros, Topic, Message } from 'roslib';
 import TreeMenu from 'react-simple-tree-menu'
 import 'node_modules/react-simple-tree-menu/dist/main.css';
 //import 'src/components/pages/treemenu.css';
-import ColorSelectorNode from './ColorSelectorNode';
-import ResizableNode from './ResizableNode';
 
 
 
