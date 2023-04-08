@@ -250,43 +250,46 @@ export const Editor = () => {
 
     <div style={{ height: windowHeight, width: windowWidth , display: 'flex'}}>
 
-      <TreeMenu data={treeData}
-        onClickItem={({ key, label, ...props }) => {
-          //this.navigate(props.url); // user defined prop
-          console.log(key, label);
+      <div>
+        <TreeMenu data={treeData}
+          onClickItem={({ key, label, ...props }) => {
+            //this.navigate(props.url); // user defined prop
+            console.log(key, label);
 
-          // *** add node ***
+            // *** add node ***
 
-          var new_id = Number(nodes.length) + 1;
-          console.log("***nodes.length***");
-          console.log(typeof nodes.length);
-          console.log(typeof '6');
-          console.log(typeof '6');
+            var new_id = Number(nodes.length) + 1;
+            console.log("***nodes.length***");
+            console.log(typeof nodes.length);
+            console.log(typeof '6');
+            console.log(typeof '6');
 
-          const newNode = 
-            {
-              id: new_id.toString(),
-              data: {
-                label: key,
-                name: key,
-                color: 'red',
-              },
-              position: { x: 100, y: 100 },
-              style: {
-                backgroundColor: 'transparent',
-                border: '1px solid #F331F5',
-                color: '#F331F5',
-              }
-            };
+            const newNode = 
+              {
+                id: new_id.toString(),
+                data: {
+                  label: key,
+                  name: key,
+                  color: 'red',
+                },
+                position: { x: 100, y: 100 },
+                style: {
+                  backgroundColor: 'transparent',
+                  border: '1px solid #F331F5',
+                  color: '#F331F5',
+                }
+              };
 
-          setNodes((nds) => nds.concat(newNode));
+            setNodes((nds) => nds.concat(newNode));
 
 
-        }}>
-      </TreeMenu>
-      <button type="button" onClick={handleClick}>
-          Click Me ! 
-      </button>
+          }}>
+        </TreeMenu>
+        <button type="button" onClick={handleClick}>
+            Click Me ! 
+        </button>
+
+      </div>
         {windowWidth > 0 && windowHeight > 0 ? (
           <ReactFlow
             nodes={nodes}
