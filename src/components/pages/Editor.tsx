@@ -13,6 +13,8 @@ import TreeMenu from 'react-simple-tree-menu'
 import 'node_modules/react-simple-tree-menu/dist/main.css';
 //import 'src/components/pages/treemenu.css';
 import ColorSelectorNode from './ColorSelectorNode';
+import ResizableNode from './ResizableNode';
+
 
 
 // as an array
@@ -53,6 +55,11 @@ import ReactFlow, {
   useEdgesState,
 } from 'react-flow-renderer'
 
+const nodeTypes = { 
+  eventNode: EventNode,
+  resizableNode: ResizableNode,
+}
+
 // TODO: 一旦ここに書いてあるが、この部分がPluginごとに異なる部分になる想定
 export type NodeDataType = {
   label: string
@@ -63,6 +70,16 @@ export type NodeDataType = {
 // ノードの作成方法，種類: https://reactflow.dev/docs/api/nodes/node-types/
 
 const initialNodes: Node<NodeDataType>[] = [
+  {
+    id: '0',
+    data: {
+      label: 'Node 1',
+      name: 'Sample Event Node 1',
+      color: '#38B5AD',
+    },
+    position: { x: 5, y: 5 },
+    type: 'eventNode',
+  },
   {
     id: '1',
     data: {
@@ -101,8 +118,6 @@ const initialEdges: Edge[] = [
 const fitViewOptions: FitViewOptions = {
   padding: 0.2,
 }
-
-const nodeTypes = { eventNode: EventNode }
 
 // ros websocket setting 
 
