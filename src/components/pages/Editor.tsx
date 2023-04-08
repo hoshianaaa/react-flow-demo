@@ -124,25 +124,6 @@ export const Editor = () => {
       //document.getElementById("color_value").value = id;
 
 
-/*
-/*
-      console.log("sub",nodeBg);
-      var len = nodes.length;
-      for (var i=0;i<len;i++)
-      {
-        if(nodes[i]['id'] == 1)
-        {
-          console.log("ok");
-          nodes[i]['style'] = { border: '1px solid #777', padding: 10, background: '#2c8a8c'};
-        }
-        else
-        {
-          nodes[i]['style'] = { border: '1px solid #777', padding: 10, background: '#FFFFFF' };
-        }
-       // console.log(nodes[i]);
-      }
-      //nodeBg = '#2c8a8c';
-      */
 
     });
  //   listener_setting = 1;
@@ -165,7 +146,8 @@ export const Editor = () => {
         }
        else
       {
-        node.style = { ...node.style, backgroundColor: '#FFFFFF' };
+        node.style = { ...node.style, backgroundColor: '#FFFFFF', border: '1px solid #F331F5' };
+//          nodes[i]['style'] = { border: '3px solid black', padding: 1, background: '#FFFFFF' };
       }
 
         return node;
@@ -267,7 +249,7 @@ export const Editor = () => {
         >
 
               <Controls />
-           <Background style={{ backgroundColor: '#f5f5f5' }} />
+           <Background style={{ backgroundColor: 'black' }} />
         </ReactFlow>
       ) : undefined}
       {selectedNode && (
