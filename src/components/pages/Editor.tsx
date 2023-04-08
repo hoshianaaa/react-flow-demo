@@ -38,7 +38,7 @@ const initialNodes: Node<NodeDataType>[] = [
       color: 'red',
     },
     position: { x: 5, y: 5 },
-    type: 'eventNode',
+    //type: 'eventNode',
   },
   {
     id: '2',
@@ -146,7 +146,7 @@ export const Editor = () => {
         }
        else
       {
-        node.style = { ...node.style, backgroundColor: '#000000', border: '1px solid #F331F5', color: '#F331F5' };
+        node.style = { ...node.style, backgroundColor: 'transparent', border: '1px solid #F331F5', color: '#F331F5' };
 //          nodes[i]['style'] = { border: '3px solid black', padding: 1, background: '#FFFFFF' };
       }
 
