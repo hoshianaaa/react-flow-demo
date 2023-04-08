@@ -1,7 +1,7 @@
 import { EventNode } from '@/components/molecules/EventNode'
 import { EditorSidePanel } from '@/components/organisms/EditorSidePanel'
 import { useGetWindowSize } from '@/hooks/useGetWindowSize'
-import { useCallback, useState, useEffect } from 'react'
+import { useCallback, useState, useEffect, useRef } from 'react'
 import { Ros, Topic, Message } from 'roslib';
 
 import ReactFlow, {
@@ -18,6 +18,8 @@ import ReactFlow, {
   NodeChange,
   OnSelectionChangeParams,
   updateEdge,
+  useNodesState,
+  useEdgesState,
 } from 'react-flow-renderer'
 
 // TODO: 一旦ここに書いてあるが、この部分がPluginごとに異なる部分になる想定
