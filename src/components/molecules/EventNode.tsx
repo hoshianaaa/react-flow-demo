@@ -29,14 +29,21 @@ export const EventNode = ({ data, selected }: EventNodeProps) => {
             {data.name}
           </span>
           <Handle
+            type="target"
+            style={{ top: '33%' }}
+            position={Position.Left}
+          />
+          <Handle
             type="source"
             style={{ top: '33%' }}
             position={Position.Right}
+            id="a"
           />
           <Handle
             type="source"
             style={{ top: '66%' }}
             position={Position.Right}
+            id="b"
           />
 
         </div>
