@@ -1,5 +1,6 @@
 // react-flow samples CodeSsandbox: https://codesandbox.io/examples/package/react-flow
 // add node sample: https://reactflow.dev/docs/examples/nodes/add-node-on-edge-drop/
+// 階層メニュー:
 
 import { EventNode } from '@/components/molecules/EventNode'
 import { EditorSidePanel } from '@/components/organisms/EditorSidePanel'
