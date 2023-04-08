@@ -10,7 +10,7 @@ interface EventNodeProps {
 export const EventNode = ({ data, selected }: EventNodeProps) => {
   return (
     <>
-      <p className="ml-1 text-[6px] text-gray-400 bg-[#f5f5f5]">{data.name}</p>
+      <p className="ml-1 text-[6px] text-gray-400 bg-transparent">{data.name}</p>
       <div
         className={
           selected
