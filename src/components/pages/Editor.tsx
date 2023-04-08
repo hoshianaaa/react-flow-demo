@@ -87,7 +87,6 @@ const initialNodes: Node<NodeDataType>[] = [
     position: { x: 5, y: 300 },
   },
 
-
 ]
 
 // markerEnd: { type: MarkerType.ArrowClosed },を追加すると矢印がでる
@@ -194,8 +193,9 @@ export const Editor = () => {
     [setEdges],
   )
   const onConnect = useCallback(
-    (connection: Connection) => setEdges((eds) => addEdge(connection, eds)),
-    [setEdges],
+    (params) =>
+      setEdges((eds) => addEdge({ ...params, animated: false, style: { stroke: '#fff' } }, eds)),
+    []
   )
 
   const onEdgeUpdate = useCallback(
