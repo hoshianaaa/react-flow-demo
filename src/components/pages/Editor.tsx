@@ -1,12 +1,46 @@
 // react-flow samples CodeSsandbox: https://codesandbox.io/examples/package/react-flow
 // add node sample: https://reactflow.dev/docs/examples/nodes/add-node-on-edge-drop/
-// 階層メニュー:
+// *** 階層メニュー react ***
+// side bar react
+// - アコーディオンメニュー
+// ナビゲーション react
+// 開閉式ツリー型メニュー: https://phpjavascriptroom.com/?t=js&p=tips_node
+// これ良さそう: https://reactjsexample.com/a-simple-react-tree-menu-component/
 
 import { EventNode } from '@/components/molecules/EventNode'
 import { EditorSidePanel } from '@/components/organisms/EditorSidePanel'
 import { useGetWindowSize } from '@/hooks/useGetWindowSize'
 import { useCallback, useState, useEffect, useRef } from 'react'
 import { Ros, Topic, Message } from 'roslib';
+
+// *** tree menu ***
+import TreeMenu from 'react-simple-tree-menu'
+//import '../node_modules/react-simple-tree-menu/dist/main.css';
+
+// as an array
+const treeData = [
+  {
+    key: 'first-level-node-1',
+    label: 'Node 1 at the first level',
+    nodes: [
+      {
+        key: 'second-level-node-1',
+        label: 'Node 1 at the second level',
+        nodes: [
+          {
+            key: 'third-level-node-1',
+            label: 'Last node of the branch',
+            nodes: [] // you can remove the nodes property or leave it as an empty array
+          },
+        ],
+      },
+    ],
+  },
+  {
+    key: 'first-level-node-2',
+    label: 'Node 2 at the first level',
+  },
+];
 
 import ReactFlow, {
   addEdge,
@@ -240,12 +274,14 @@ export const Editor = () => {
 
     setNodes((nds) => nds.concat(newNode));
 
-
   };
 
 
   return (
+    
+
     <div style={{ height: windowHeight, width: windowWidth }}>
+    <TreeMenu data={treeData} />
     <button type="button" onClick={handleClick}>
         Click Me ! 
     </button>
