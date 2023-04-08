@@ -8,10 +8,15 @@ interface EditorSidePanelProps {
 
 export const EditorSidePanel = ({ settings, node }: EditorSidePanelProps) => {
   return (
-    <div className="w-1/4 h-5/6 bg-white absolute bottom-10 right-4 z-50 rounded-2xl drop-shadow-md">
+
+  // classnameの設定 https://zenn.dev/dev_shun/articles/f3d4634a25cabf
+  // tailwindcss border color 一覧: https://tailwindcss.com/docs/border-color 
+  // tailwindcss border width: https://tailwindcss.com/docs/border-width
+
+    <div className="w-1/4 h-5/6 bg-fuchsia-300 bg-opacity-20 absolute bottom-10 right-4 z-50 rounded-2xl drop-shadow-md text-blue-600 border-indigo-600 border">
       <div
         className="rounded-t-2xl h-4"
-        style={{ backgroundColor: node.data.color }}
+        //style={{ backgroundColor: node.data.color }}
       />
       <p> 関数名: {node.data.name} </p>
     </div>
