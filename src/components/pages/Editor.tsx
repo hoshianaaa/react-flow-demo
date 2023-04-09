@@ -10,6 +10,7 @@ import { Ros, Topic, Message } from 'roslib';
 // *** tree menu ***
 // https://github.com/iannbing/react-simple-tree-menu
 import TreeMenu from 'react-simple-tree-menu'
+// nodemodule内のcss変更，新しくモジュールをインストールしないと変更されない
 import 'node_modules/react-simple-tree-menu/dist/main.css';
 //import 'src/components/pages/treemenu.css';
 
