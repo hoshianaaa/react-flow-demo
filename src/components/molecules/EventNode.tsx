@@ -23,6 +23,9 @@ export const EventNode = ({ data, selected }: EventNodeProps) => {
       >
         <div>
 
+          <p style={{ top: 14, color: 'gray', left: 8, textAlign: 'right',fontSize:'10px',position:"absolute"}}>
+            INPUT
+          </p>
           <p style={{ top: 6, color: 'gray', right: 8, textAlign: 'right',fontSize:'10px',position:"absolute"}}>
             SUCCEED
           </p>
