@@ -2,8 +2,8 @@ import { NodeDataType } from '@/components/pages/Editor'
 import { Node } from 'react-flow-renderer'
 
 // json editor
-import { JsonEditor as Editor } from 'jsoneditor-react';
-import 'jsoneditor-react/es/editor.min.css';
+import { JSONViewer } from "react-json-editor-viewer";
+import { JSONEditor } from "react-json-editor-viewer";
 
 interface EditorSidePanelProps {
   settings: any // これがNodeごとに固有になるイメージ
@@ -25,6 +25,7 @@ export const EditorSidePanel = ({ settings, node }: EditorSidePanelProps) => {
         className="rounded-t-2xl h-4"
         //style={{ backgroundColor: node.data.color }}
       >
+
      </div>
         <div className="text-center">
           <p> {node.data.name} </p>
@@ -32,6 +33,8 @@ export const EditorSidePanel = ({ settings, node }: EditorSidePanelProps) => {
           <p> {JSON.stringify(node.data.args.p1)} </p>
           <p> {JSON.stringify(node.data.args.p1[0])} </p>
         </div>
+        <JSONEditor data={node.data.args}/>
     </div>
+
   )
 }
