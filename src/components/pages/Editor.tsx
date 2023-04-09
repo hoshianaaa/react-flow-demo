@@ -108,9 +108,9 @@ const initialNodes: Node<NodeDataType>[] = [
 // markerEnd: { type: MarkerType.ArrowClosed },を追加すると矢印がでる
 const initialEdges: Edge[] = [
   { id: 'e1-5', source: '1', target: '5' },
-  { id: 'e5-2', source: '5', target: '2' },
+  { id: 'e5-2', source: '5', target: '2', sourceHandle: 'SUCCEED'},
+  { id: 'e5-2', source: '5', target: '4', sourceHandle: 'FAILED'},
   { id: 'e2-3', source: '2', target: '3' },
-  { id: 'e3-4', source: '3', target: '4' },
 ]
 
 const fitViewOptions: FitViewOptions = {
