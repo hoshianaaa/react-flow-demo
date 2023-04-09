@@ -23,31 +23,31 @@ export const EventNode = ({ data, selected }: EventNodeProps) => {
       >
         <div>
 
-          <p style={{ top: 9, left: 48, textAlign: 'right',fontSize:'10px',position:"absolute"}}>
+          <p style={{ top: 6, right: 8, textAlign: 'right',fontSize:'10px',position:"absolute"}}>
             SUCCEED
           </p>
-          <p style={{ top: 30, left: 54, textAlign: 'right',fontSize:'10px',position:"absolute"}}>
+          <p style={{ top: 22, right: 8, textAlign: 'right',fontSize:'10px',position:"absolute"}}>
             FAILED
           </p>
 
 
           <Handle
             type="target"
-            style={{ top: '33%' }}
+            style={{ top: '50%' }}
             position={Position.Left}
             className="aaa"
           >
           </Handle>
           <Handle
             type="source"
-            style={{ top: '33%' }}
+            style={{ top: '35%' }}
             position={Position.Right}
             id="SUCCEED"
           >
           </Handle>
           <Handle
             type="source"
-            style={{ top: '80%' }}
+            style={{ top: '75%' }}
             position={Position.Right}
             id="FAILED"
           >
