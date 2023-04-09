@@ -72,7 +72,6 @@ export const EditorSidePanel = ({ settings, node }: EditorSidePanelProps) => {
         className="rounded-t-2xl h-4"
         //style={{ backgroundColor: node.data.color }}
       >
-
      </div>
         <div className="text-center">
           <p> {node.data.name} </p>
