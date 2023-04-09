@@ -68,7 +68,7 @@ export type NodeDataType = {
 
 const initialNodes: Node<NodeDataType>[] = [
   {
-    id: '0',
+    id: '5',
     data: {
       label: 'dig top point',
       name: 'dig top point',
@@ -107,8 +107,8 @@ const initialNodes: Node<NodeDataType>[] = [
 
 // markerEnd: { type: MarkerType.ArrowClosed },を追加すると矢印がでる
 const initialEdges: Edge[] = [
-  { id: 'e1-0', source: '1', target: '0' },
-  { id: 'e0-2', source: '0', target: '2' },
+  { id: 'e1-5', source: '1', target: '5' },
+  { id: 'e5-2', source: '5', target: '2' },
   { id: 'e2-3', source: '2', target: '3' },
   { id: 'e3-4', source: '3', target: '4' },
 ]
