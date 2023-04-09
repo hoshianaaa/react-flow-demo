@@ -23,13 +23,13 @@ export const EventNode = ({ data, selected }: EventNodeProps) => {
       >
         <div>
 
-          <p style={{ top: 14, color: 'cyan', left: 8, textAlign: 'right',fontSize:'10px',position:"absolute"}}>
+          <p style={{ top: 14, color: 'lightgray', left: 8, textAlign: 'right',fontSize:'10px',position:"absolute"}}>
             INPUT
           </p>
-          <p style={{ top: 6, color: 'lime', right: 8, textAlign: 'right',fontSize:'10px',position:"absolute"}}>
+          <p style={{ top: 6, color: 'cyan', right: 8, textAlign: 'right',fontSize:'10px',position:"absolute"}}>
             SUCCEED
           </p>
-          <p style={{ top: 22, color: 'red', right: 8, textAlign: 'right',fontSize:'10px',position:"absolute"}}>
+          <p style={{ top: 22, color: 'yellow', right: 8, textAlign: 'right',fontSize:'10px',position:"absolute"}}>
             FAILED
           </p>
 
