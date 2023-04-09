@@ -73,6 +73,7 @@ const initialNodes: Node<NodeDataType>[] = [
       label: 'dig top point',
       name: 'dig top point',
       color: '#F331F5',
+      args: [1,1,1],
     },
     position: { x: -50, y: 0 },
     type: 'eventNode',
@@ -89,7 +90,7 @@ const initialNodes: Node<NodeDataType>[] = [
   },
   {
     id: '2',
-    data: { label: 'down_arm', name: 'down_arm'},
+    data: { label: 'down_arm', name: 'down_arm', args: {p1:[1,1,1],p2:[1,5,1]},},
     position: { x: 100, y: 100 },
   },
   {
