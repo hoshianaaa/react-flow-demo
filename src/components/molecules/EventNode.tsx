@@ -7,19 +7,17 @@ interface EventNodeProps {
   selected: boolean
 }
 
+// Tailwind text align: https://tailwindcss.com/docs/text-align
 export const EventNode = ({ data, selected }: EventNodeProps) => {
   return (
     <>
-      <p className="ml-1 text-[14px] text-blue-400 bg-transparent">{data.name}</p>
+      <p className="ml-1 text-[14px] text-blue-400 bg-transparent text-center">{data.name}</p>
       <div
-        className={
-          selected
-            ? 'border-2 border-red-400 p-1 relative justify-center items-center'
-            : 'border-2 border-transparent p-1 relative justify-center items-center'
-        }
+        className=
+            'border-2 border-red-800 p-1 relative justify-center items-center'
         style={{
-          width : 100,
-          height: 50,
+          width : 150,
+          height: 40,
         }}
 
       >
