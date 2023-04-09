@@ -11,10 +11,10 @@ interface EventNodeProps {
 export const EventNode = ({ data, selected }: EventNodeProps) => {
   return (
     <>
-      <p className="ml-1 text-[14px] text-red-800 bg-transparent text-center">{data.name}</p>
+      <p className="ml-1 text-[14px] text-blue-400 bg-transparent text-center">{data.name}</p>
       <div
         className=
-            'border-2 border-pink-800 p-1 relative justify-center items-center'
+            'border-2 border-red-600 p-1 relative justify-center items-center'
         style={{
           width : 150,
           height: 40,
