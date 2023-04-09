@@ -77,8 +77,6 @@ export const EditorSidePanel = ({ settings, node }: EditorSidePanelProps) => {
         <div className="text-center">
           <p> {node.data.name} </p>
           <p> {JSON.stringify(node.data.args)} </p>
-          <p> {JSON.stringify(node.data.args.p1)} </p>
-          <p> {JSON.stringify(node.data.args.p1[0])} </p>
         </div>
         <JSONEditor data={node.data.args}   onChange={onJsonChange}/>
     </div>
