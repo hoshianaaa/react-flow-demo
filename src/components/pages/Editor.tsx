@@ -34,6 +34,7 @@ const treeData = [
   },
 ];
 
+
 import ReactFlow, {
   addEdge,
   applyEdgeChanges,
@@ -71,7 +72,7 @@ const initialNodes: Node<NodeDataType>[] = [
     data: {
       label: 'dig top point',
       name: 'dig top point',
-      color: '#38B5AD',
+      color: '#F331F5',
     },
     position: { x: -50, y: 0 },
     type: 'eventNode',
