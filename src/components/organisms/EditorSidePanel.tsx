@@ -77,7 +77,7 @@ export const EditorSidePanel = ({ settings, node }: EditorSidePanelProps) => {
           <p> {node.data.name} </p>
           <p> {JSON.stringify(node.data.args)} </p>
         </div>
-        <JSONEditor data={node.data.args}   onChange={onJsonChange}/>
+        <JSONEditor data={node.data.args}   onChange={onJsonChange} showRemoveButton='false'/>
     </div>
 
   )
