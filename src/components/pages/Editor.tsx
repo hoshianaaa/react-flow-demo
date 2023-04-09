@@ -69,8 +69,8 @@ const initialNodes: Node<NodeDataType>[] = [
   {
     id: '0',
     data: {
-      label: 'Node 1',
-      name: 'Sample Event Node 1',
+      label: 'dig top point',
+      name: 'dig top point',
       color: '#38B5AD',
     },
     position: { x: -50, y: 0 },
