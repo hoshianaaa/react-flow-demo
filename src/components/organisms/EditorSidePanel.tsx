@@ -1,6 +1,9 @@
 import { NodeDataType } from '@/components/pages/Editor'
 import { Node } from 'react-flow-renderer'
-// json view: https://morioh.com/p/6b61f0fc6f71
+
+// json editor
+import { JsonEditor as Editor } from 'jsoneditor-react';
+import 'jsoneditor-react/es/editor.min.css';
 
 interface EditorSidePanelProps {
   settings: any // これがNodeごとに固有になるイメージ
@@ -8,6 +11,8 @@ interface EditorSidePanelProps {
 }
 
 export const EditorSidePanel = ({ settings, node }: EditorSidePanelProps) => {
+
+  node.data.args.p1[0] = 100;
 
   return (
 
@@ -24,6 +29,8 @@ export const EditorSidePanel = ({ settings, node }: EditorSidePanelProps) => {
         <div className="text-center">
           <p> {node.data.name} </p>
           <p> {JSON.stringify(node.data.args)} </p>
+          <p> {JSON.stringify(node.data.args.p1)} </p>
+          <p> {JSON.stringify(node.data.args.p1[0])} </p>
         </div>
     </div>
   )
