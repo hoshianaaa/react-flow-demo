@@ -1,9 +1,33 @@
 import { NodeDataType } from '@/components/pages/Editor'
 import { Node } from 'react-flow-renderer'
+import { setState, useCallback, useState, useEffect, useRef } from 'react'
 
 // json editor
 import { JSONViewer } from "react-json-editor-viewer";
 import { JSONEditor } from "react-json-editor-viewer";
+
+
+// react-flow
+
+import ReactFlow, {
+  addEdge,
+  applyEdgeChanges,
+  applyNodeChanges,
+  Background,
+  Connection,
+  Controls,
+  Edge,
+  EdgeChange,
+  FitViewOptions,
+  Node,
+  NodeChange,
+  OnSelectionChangeParams,
+  updateEdge,
+  useNodesState,
+  useEdgesState,
+} from 'react-flow-renderer'
+
+
 
 interface EditorSidePanelProps {
   settings: any // これがNodeごとに固有になるイメージ
@@ -13,6 +37,18 @@ interface EditorSidePanelProps {
 export const EditorSidePanel = ({ settings, node }: EditorSidePanelProps) => {
 
   node.data.args.p1[0] = 100;
+
+  const [node, setNode] = useState<Node>(node)
+
+  useEffect(() => { 
+          
+  });
+
+  function onJsonChange(key, value, parent, data){
+      console.log(key, value, parent, data);
+      node.data.args.p1[0] = 200;
+      node.data.args = data;
+  }
 
   return (
 
@@ -33,7 +69,7 @@ export const EditorSidePanel = ({ settings, node }: EditorSidePanelProps) => {
           <p> {JSON.stringify(node.data.args.p1)} </p>
           <p> {JSON.stringify(node.data.args.p1[0])} </p>
         </div>
-        <JSONEditor data={node.data.args}/>
+        <JSONEditor data={node.data.args}   onChange={onJsonChange}/>
     </div>
 
   )
