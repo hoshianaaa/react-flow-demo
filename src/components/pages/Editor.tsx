@@ -90,12 +90,12 @@ const initialNodes: Node<NodeDataType>[] = [
   },
   {
     id: '2',
-    data: { label: 'down_arm', name: 'down_arm', args: {p1:[1,1,1],p2:[1,5,1]},},
+    data: { label: 'down_arm', name: 'down_arm'},
     position: { x: 100, y: 100 },
   },
   {
     id: '3',
-    data: { label: 'move', name: 'move'},
+    data: { label: 'move', name: 'move', args: {p1:[-5,11,0],p2:[4,11,0]}},
     position: { x: 100, y: 200 },
   },
   {
@@ -334,7 +334,7 @@ export const Editor = () => {
         {selectedNode && (
           <EditorSidePanel
             node={selectedNode}
-            settings={{ sampleProperty: 'aaa' }}
+            settings={setSelectedNode}
           />
         )}
 

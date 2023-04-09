@@ -34,21 +34,32 @@ interface EditorSidePanelProps {
   node: Node<NodeDataType>
 }
 
+// 親のnodeを変更したい
+// *** urls ***
+// https://stackoverflow.com/questions/24939623/can-i-update-a-components-props-in-react-js
+
+// *** keywords *** 
+// chnage parent objcet value react 
+
 export const EditorSidePanel = ({ settings, node }: EditorSidePanelProps) => {
 
-  node.data.args.p1[0] = 100;
-
-  const [node, setNode] = useState<Node>(node)
-
-  useEffect(() => { 
-          
-  });
+//  node.data.args.p1[0] = 2000;
 
   function onJsonChange(key, value, parent, data){
       console.log(key, value, parent, data);
-      node.data.args.p1[0] = 200;
-      node.data.args = data;
+//      Node<NodeDataType> n;
+      //setNode(n);
+      var n = node;
+      n.data.args = data;
+      console.log(n);
+      node = n;
+      settings(node);
+      console.log("***settings***");
+      console.log(typeof settings);
   }
+
+  useEffect(() => { 
+  });
 
   return (
 
