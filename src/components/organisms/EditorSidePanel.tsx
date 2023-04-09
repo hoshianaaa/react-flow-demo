@@ -1,5 +1,6 @@
 import { NodeDataType } from '@/components/pages/Editor'
 import { Node } from 'react-flow-renderer'
+// json view: https://morioh.com/p/6b61f0fc6f71
 
 interface EditorSidePanelProps {
   settings: any // これがNodeごとに固有になるイメージ
@@ -7,6 +8,7 @@ interface EditorSidePanelProps {
 }
 
 export const EditorSidePanel = ({ settings, node }: EditorSidePanelProps) => {
+
   return (
 
   // classnameの設定 https://zenn.dev/dev_shun/articles/f3d4634a25cabf
@@ -18,9 +20,10 @@ export const EditorSidePanel = ({ settings, node }: EditorSidePanelProps) => {
         className="rounded-t-2xl h-4"
         //style={{ backgroundColor: node.data.color }}
       >
-        </div>
+     </div>
         <div className="text-center">
           <p> {node.data.name} </p>
+          <p> {JSON.stringify(node.data.args)} </p>
         </div>
     </div>
   )
