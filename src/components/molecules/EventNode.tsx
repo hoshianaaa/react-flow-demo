@@ -14,14 +14,16 @@ export const EventNode = ({ data, selected }: EventNodeProps) => {
       <div
         className={
           selected
-            ? 'border-2 border-blue-400 p-1 relative justify-center items-center'
+            ? 'border-2 border-red-400 p-1 relative justify-center items-center'
             : 'border-2 border-transparent p-1 relative justify-center items-center'
         }
+        style={{
+          width : 300,
+          height: 100,
+        }}
+
       >
-        <div
-          className={`rounded-full bg-tranparent border-2 px-2 py-1 justify-center items-center`}
-          style={{ borderColor: data.color }}
-        >
+        <div>
           <span
             className="font-semibold text-center"
             style={{ color: data.color }}
@@ -32,18 +34,21 @@ export const EventNode = ({ data, selected }: EventNodeProps) => {
             type="target"
             style={{ top: '33%' }}
             position={Position.Left}
-          />
+            className="aaa"
+          >
+          aaa
+          </Handle>
           <Handle
             type="source"
             style={{ top: '33%' }}
             position={Position.Right}
-            id="a"
+            id="SUCCEED"
           />
           <Handle
             type="source"
             style={{ top: '66%' }}
             position={Position.Right}
-            id="b"
+            id="FAILED"
           />
 
         </div>
