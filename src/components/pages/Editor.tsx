@@ -73,7 +73,7 @@ const initialNodes: Node<NodeDataType>[] = [
       name: 'Sample Event Node 1',
       color: '#38B5AD',
     },
-    position: { x: 5, y: 5 },
+    position: { x: -50, y: 0 },
     type: 'eventNode',
   },
   {
@@ -82,19 +82,19 @@ const initialNodes: Node<NodeDataType>[] = [
       label: 'start',
       name: 'start',
     },
-    position: { x: 5, y: 5 },
+    position: { x: -200, y: -70 },
     deletable: 'false',
     type: 'input',
   },
   {
     id: '2',
     data: { label: 'down_arm', name: 'down_arm'},
-    position: { x: 5, y: 100 },
+    position: { x: 100, y: 100 },
   },
   {
     id: '3',
     data: { label: 'move', name: 'move'},
-    position: { x: 5, y: 200 },
+    position: { x: 100, y: 200 },
   },
   {
     id: '4',
@@ -106,7 +106,8 @@ const initialNodes: Node<NodeDataType>[] = [
 
 // markerEnd: { type: MarkerType.ArrowClosed },を追加すると矢印がでる
 const initialEdges: Edge[] = [
-  { id: 'e1-2', source: '1', target: '2' },
+  { id: 'e1-0', source: '1', target: '0' },
+  { id: 'e0-2', source: '0', target: '2' },
   { id: 'e2-3', source: '2', target: '3' },
   { id: 'e3-4', source: '3', target: '4' },
 ]
