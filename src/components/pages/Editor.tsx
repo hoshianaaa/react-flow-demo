@@ -287,6 +287,13 @@ export const Editor = () => {
             console.log(typeof '6');
             console.log(typeof '6');
 
+            var args = "";
+            if (key == "move")
+            {
+              args = {p1:[0,0,0],p2:[0,0,0]};
+            }
+
+
             const newNode = 
               {
                 id: new_id.toString(),
@@ -294,6 +301,7 @@ export const Editor = () => {
                   label: key,
                   name: key,
                   color: 'red',
+                  args: args,
                 },
                 position: { x: 100, y: 100 },
                 style: {
