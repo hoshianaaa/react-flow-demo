@@ -14,7 +14,7 @@ export const EventNode = ({ data, selected }: EventNodeProps) => {
       <p className="border-2 border-transparent text-[14px] text-fuchsia-500 text-center">{data.name}</p>
       <div
         className=
-            'p-1 relative justify-center items-center border-2 border-red-600'
+            'p-1 relative justify-center items-center border-2 border-gray-400'
         style={{
           width : 150,
           height: 40,
