@@ -11,7 +11,7 @@ interface EventNodeProps {
 export const EventNode = ({ data, selected }: EventNodeProps) => {
   return (
     <>
-      <p className="border-2 border-transparent text-[14px] text-gray-400 text-center">{data.name}</p>
+      <p className="border-2 border-transparent text-[14px] text-gray-300 text-center">{data.name}</p>
       <div
         className=
             'p-1 relative justify-center items-center'
