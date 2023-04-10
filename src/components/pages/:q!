@@ -14,9 +14,6 @@ import TreeMenu from 'react-simple-tree-menu'
 import 'node_modules/react-simple-tree-menu/dist/main.css';
 //import 'src/components/pages/treemenu.css';
 
-// react-icons
-import { FaBeer } from 'react-icons/fa';
-
 
 // as an array
 const treeData = [
@@ -300,89 +297,88 @@ export const Editor = () => {
 
   return (
     
-    <div>aaa
-      <h3> Lets go for a <FaBeer />? </h3>
-      <div style={{ height: windowHeight, width: windowWidth, display: 'flex' }}>
-        <div>
-          <TreeMenu data={treeData} 
-            hasSearch='false'
-            onClickItem={({ key, label, ...props }) => {
-              //this.navigate(props.url); // user defined prop
-              console.log(key, label);
 
-              // *** add node ***
+    <div style={{ height: windowHeight, width: windowWidth , display: 'flex'}}>
 
-              var new_id = Number(nodes.length) + 1;
-              console.log("***nodes.length***");
-              console.log(typeof nodes.length);
-              console.log(typeof '6');
-              console.log(typeof '6');
+      <div>
+        <TreeMenu data={treeData} 
+          hasSearch='false'
+          onClickItem={({ key, label, ...props }) => {
+            //this.navigate(props.url); // user defined prop
+            console.log(key, label);
+
+            // *** add node ***
+
+            var new_id = Number(nodes.length) + 1;
+            console.log("***nodes.length***");
+            console.log(typeof nodes.length);
+            console.log(typeof '6');
+            console.log(typeof '6');
 
 
-              const newNode = 
-                {
-                  id: new_id.toString(),
-                  data: {
-                    label: label,
-                    name: key,
-                    color: 'red',
-                  },
-                  position: { x: 100, y: 100 },
-                  style: {
-                    backgroundColor: 'transparent',
-                    border: '1px solid #F331F5',
-                    color: '#F331F5',
-                  }
-                };
-
-                var args = null;
-                if (key == "move")
-                {
-                  args = {p1:[0,0,0],p2:[0,0,0]};
+            const newNode = 
+              {
+                id: new_id.toString(),
+                data: {
+                  label: label,
+                  name: key,
+                  color: 'red',
+                },
+                position: { x: 100, y: 100 },
+                style: {
+                  backgroundColor: 'transparent',
+                  border: '1px solid #F331F5',
+                  color: '#F331F5',
                 }
-                if (args != null)
-                {
-                    newNode.data.args = args;
-                }
+              };
+
+              var args = null;
+              if (key == "move")
+              {
+                args = {p1:[0,0,0],p2:[0,0,0]};
+              }
+              if (args != null)
+              {
+                  newNode.data.args = args;
+              }
 
 
 
-              setNodes((nds) => nds.concat(newNode));
+            setNodes((nds) => nds.concat(newNode));
 
 
-            }}>
-          </TreeMenu>
-          <button type="button" onClick={handleClick}>
-              Click Me ! 
-          </button>
+          }}>
+        </TreeMenu>
+        <button type="button" onClick={handleClick}>
+            Click Me ! 
+        </button>
 
-        </div>
-          {windowWidth > 0 && windowHeight > 0 ? (
-            <ReactFlow
-              nodes={nodes}
-              edges={edges}
-              onNodesChange={onNodesChange}
-              onEdgesChange={onEdgesChange}
-              onConnect={onConnect}
-              onEdgeUpdate={onEdgeUpdate}
-              nodeTypes={nodeTypes}
-              onSelectionChange={onSelectionChange}
-              fitView
-              fitViewOptions={fitViewOptions}
-            >
+      </div>
+        {windowWidth > 0 && windowHeight > 0 ? (
+          <ReactFlow
+            nodes={nodes}
+            edges={edges}
+            onNodesChange={onNodesChange}
+            onEdgesChange={onEdgesChange}
+            onConnect={onConnect}
+            onEdgeUpdate={onEdgeUpdate}
+            nodeTypes={nodeTypes}
+            onSelectionChange={onSelectionChange}
+            fitView
+            fitViewOptions={fitViewOptions}
+          >
 
-                  <Controls />
-               <Background style={{ backgroundColor: 'black' }} />
-            </ReactFlow>
-          ) : undefined}
-          {selectedNode && (
-            <EditorSidePanel
-              node={selectedNode}
-              settings={setSelectedNode}
-            />
-          )}
+                <Controls />
+             <Background style={{ backgroundColor: 'black' }} />
+          </ReactFlow>
+        ) : undefined}
+        {selectedNode && (
+          <EditorSidePanel
+            node={selectedNode}
+            settings={setSelectedNode}
+          />
+        )}
 
     </div>
-  </div>
   )
 }
