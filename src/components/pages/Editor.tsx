@@ -27,7 +27,7 @@ const treeData = [
   },
   {
     key: 'move',
-    label: '直線移動',
+    label: '直進走行',
   },
   {
     key: 'back',
@@ -80,12 +80,12 @@ const initialNodes: Node<NodeDataType>[] = [
   },
   {
     id: '2',
-    data: { label: '直線移動', name: 'move', args: {p1:[0,0,0],p2:[0,0,0]}},
+    data: { label: '直進走行', name: 'move', args: {p1:[0,0,0],p2:[0,0,0]}},
     position: { x: 100, y: 100 },
   },
   {
     id: '3',
-    data: { label: '直線移動', name: 'move', args: {p1:[0,0,0],p2:[0,0,0]}},
+    data: { label: '直進走行', name: 'move', args: {p1:[0,0,0],p2:[0,0,0]}},
     position: { x: 100, y: 200 },
   },
 
@@ -118,7 +118,7 @@ const initialNodes: Node<NodeDataType>[] = [
   },
   {
     id: '3',
-    data: { label: '直線移動', name: 'move', args: {p1:[-5,11,0],p2:[4,11,0]}},
+    data: { label: '直進走行', name: 'move', args: {p1:[-5,11,0],p2:[4,11,0]}},
     position: { x: 100, y: 200 },
   },
   {
