@@ -301,7 +301,7 @@ export const Editor = () => {
   return (
     
     <div>
-      <div style={{ padding: 20 , backgroundColor:'white', border: '1px solid lightgray', color: 'darkcyan'}}>
+      <div style={{ padding: 20 , backgroundColor:'whitesmoke', border: '1px solid lightgray', color: 'darkcyan'}}>
         <button
           sytle={{ border: '3px solid #333' }}
           type="button"
