@@ -300,8 +300,13 @@ export const Editor = () => {
 
   return (
     
-    <div>a
-      <h3> Lets go for a <FaPlay />? </h3>
+    <div style={{ padding: 20 }}>
+      <button
+        type="button"
+        onClick={handleClick}
+      > 
+        <FaPlay />
+      </button>
       <div style={{ height: windowHeight, width: windowWidth, display: 'flex' }}>
         <div>
           <TreeMenu data={treeData} 
@@ -352,9 +357,6 @@ export const Editor = () => {
 
             }}>
           </TreeMenu>
-          <button type="button" onClick={handleClick}>
-              Click Me ! 
-          </button>
 
         </div>
           {windowWidth > 0 && windowHeight > 0 ? (
