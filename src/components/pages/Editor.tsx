@@ -309,6 +309,7 @@ export const Editor = () => {
         > 
           <FaPlay />
         </button>
+       : 開始
       </div>
       <div style={{ height: windowHeight, width: windowWidth, display: 'flex' }}>
         <div>
