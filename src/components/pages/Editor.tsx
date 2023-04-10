@@ -15,7 +15,7 @@ import 'node_modules/react-simple-tree-menu/dist/main.css';
 //import 'src/components/pages/treemenu.css';
 
 // react-icons
-import { FaBeer } from 'react-icons/fa';
+import { FaPlay } from 'react-icons/fa';
 
 
 // as an array
@@ -300,8 +300,8 @@ export const Editor = () => {
 
   return (
     
-    <div>aaa
-      <h3> Lets go for a <FaBeer />? </h3>
+    <div>a
+      <h3> Lets go for a <FaPlay />? </h3>
       <div style={{ height: windowHeight, width: windowWidth, display: 'flex' }}>
         <div>
           <TreeMenu data={treeData} 
