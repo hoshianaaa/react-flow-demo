@@ -300,13 +300,16 @@ export const Editor = () => {
 
   return (
     
-    <div style={{ padding: 20 }}>
-      <button
-        type="button"
-        onClick={handleClick}
-      > 
-        <FaPlay />
-      </button>
+    <div>
+      <div style={{ padding: 20 , border: '3px solid #333'}}>
+        <button
+          sytle={{ border: '3px solid #333' }}
+          type="button"
+          onClick={handleClick}
+        > 
+          <FaPlay />
+        </button>
+      </div>
       <div style={{ height: windowHeight, width: windowWidth, display: 'flex' }}>
         <div>
           <TreeMenu data={treeData} 
