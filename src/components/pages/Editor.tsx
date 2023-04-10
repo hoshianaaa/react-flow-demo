@@ -19,19 +19,19 @@ import 'node_modules/react-simple-tree-menu/dist/main.css';
 const treeData = [
   {
     key: 'up_arm',
-    label: 'up_arm',
+    label: 'アームを上げる',
   },
   {
     key: 'down_arm',
-    label: 'down_arm',
+    label: 'アームを下げる',
   },
   {
     key: 'move',
-    label: 'move',
+    label: '直線移動',
   },
   {
     key: 'back',
-    label: 'back',
+    label: '後進走行',
   },
 ];
 
@@ -71,7 +71,7 @@ const initialNodes: Node<NodeDataType>[] = [
   {
     id: '1',
     data: {
-      label: 'start',
+      label: 'スタート',
       name: 'start',
     },
     position: { x: -200, y: -70 },
@@ -80,12 +80,12 @@ const initialNodes: Node<NodeDataType>[] = [
   },
   {
     id: '2',
-    data: { label: 'move', name: 'move', args: {p1:[0,0,0],p2:[0,0,0]}},
+    data: { label: '直線移動', name: 'move', args: {p1:[0,0,0],p2:[0,0,0]}},
     position: { x: 100, y: 100 },
   },
   {
     id: '3',
-    data: { label: 'move', name: 'move', args: {p1:[0,0,0],p2:[0,0,0]}},
+    data: { label: '直線移動', name: 'move', args: {p1:[0,0,0],p2:[0,0,0]}},
     position: { x: 100, y: 200 },
   },
 
@@ -93,7 +93,7 @@ const initialNodes: Node<NodeDataType>[] = [
   {
     id: '5',
     data: {
-      label: 'dig top point',
+      label: '最高点の掘削',
       name: 'dig top point',
       color: '#F331F5',
       args: [1,1,1],
@@ -104,7 +104,7 @@ const initialNodes: Node<NodeDataType>[] = [
   {
     id: '1',
     data: {
-      label: 'start',
+      label: 'スタート',
       name: 'start',
     },
     position: { x: -200, y: -70 },
@@ -113,17 +113,17 @@ const initialNodes: Node<NodeDataType>[] = [
   },
   {
     id: '2',
-    data: { label: 'down_arm', name: 'down_arm'},
+    data: { label: 'アームを下ろす', name: 'down_arm'},
     position: { x: 100, y: 100 },
   },
   {
     id: '3',
-    data: { label: 'move', name: 'move', args: {p1:[-5,11,0],p2:[4,11,0]}},
+    data: { label: '直線移動', name: 'move', args: {p1:[-5,11,0],p2:[4,11,0]}},
     position: { x: 100, y: 200 },
   },
   {
     id: '4',
-    data: { label: 'up_arm', name: 'up_arm'},
+    data: { label: 'アームを上げる', name: 'up_arm'},
     position: { x: 5, y: 300 },
   },
   */
@@ -320,7 +320,7 @@ export const Editor = () => {
               {
                 id: new_id.toString(),
                 data: {
-                  label: key,
+                  label: label,
                   name: key,
                   color: 'red',
                 },
