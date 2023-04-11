@@ -245,10 +245,6 @@ export const Editor = () => {
   {
     function_list_listener.subscribe(message => {
 
-      //console.log(message.data);
-      //treeData = {};
-      //setTreeData([{key:"aa",label:"b"}]);
-
       var function_list = JSON.parse(message.data);
       console.log("function_list",function_list);
       console.log("treeData",treeData);
