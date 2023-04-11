@@ -40,7 +40,7 @@ import ReactFlow, {
 } from 'react-flow-renderer'
 
 const nodeTypes = { 
-  eventNode: EventNode,
+  DUAL_RESULT: EventNode,
 }
 
 // TODO: 一旦ここに書いてあるが、この部分がPluginごとに異なる部分になる想定
@@ -84,7 +84,7 @@ const initialNodes: Node<NodeDataType>[] = [
       args: [1,1,1],
     },
     position: { x: -50, y: 0 },
-    type: 'eventNode',
+    type: 'DUAL_RESULT',
   },
   {
     id: '1',
@@ -429,7 +429,7 @@ export const Editor = () => {
 
               if (type=="DUAL_RESULT")
               {
-                newNode.type = "eventNode";
+                newNode.type = "DUAL_RESULT";
               }
 
               setNodes((nds) => nds.concat(newNode));
