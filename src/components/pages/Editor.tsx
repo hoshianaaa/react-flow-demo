@@ -20,22 +20,35 @@ import { FaPlay } from 'react-icons/fa';
 
 // as an array
 const treeData = [
-  {
-    key: 'up_arm',
-    label: 'アームを上げる',
-  },
-  {
-    key: 'down_arm',
-    label: 'アームを下げる',
+  
+  { 
+    key: 'arm',
+    label: '作業機系',
+    nodes: [
+      {
+        key: 'up_arm',
+        label: 'アームを上げる',
+      },
+      {
+        key: 'down_arm',
+        label: 'アームを下げる',
+      },
+    ],
   },
   {
     key: 'move',
-    label: '直進走行',
-  },
-  {
-    key: 'back',
-    label: '後進走行',
-  },
+    label: '移動系',
+    nodes: [
+      {
+        key: 'move',
+        label: '直進走行',
+      },
+      {
+        key: 'back',
+        label: '後進走行',
+      },
+      ],
+  }
 ];
 
 
