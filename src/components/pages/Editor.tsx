@@ -18,49 +18,9 @@ import 'node_modules/react-simple-tree-menu/dist/main.css';
 import { FaPlay } from 'react-icons/fa';
 
 
-// as an array
-const treeData = [
-  
-  { 
-    key: 'arm',
-    label: '作業機操作',
-    nodes: [
-      {
-        key: 'up_arm',
-        label: 'アームを上げる',
-      },
-      {
-        key: 'down_arm',
-        label: 'アームを下げる',
-      },
-    ],
-  },
-  {
-    key: 'move',
-    label: '移動体操作',
-    nodes: [
-        {
-          key: 'move',
-          label: '直進走行',
-        },
-        {
-          key: 'back',
-          label: '後進走行',
-        },
-      ],
-  },
-  {
-    key: 'dig',
-    label: '作業系',
-    nodes: [
-        {
-          key: 'dig_top_point',
-          label: '最高点の掘削',
-        },
-      ],
-  }
+// 動的変数 {} 内の値を変化させる場合はstateを使う: https://qiita.com/Kazunori-Kimura/items/d94ddd1a8d8e2e39d504
 
-];
+
 
 
 import ReactFlow, {
@@ -197,6 +157,12 @@ const fitViewOptions: FitViewOptions = {
     messageType: 'std_msgs/String'
   });
 
+  const function_list_listener = new Topic({
+    ros: ros,
+    name: '/wheel_loader1/function_list',
+    messageType: 'std_msgs/String'
+  });
+
 var listener_setting = 0;
 
 export const Editor = () => {
@@ -206,6 +172,50 @@ export const Editor = () => {
   //useStateサンプル: https://reactflow.dev/docs/examples/nodes/update-node/
   const [nodeBg, setNodeBg] = useState('#FFFFFF');
   const [selectedNode, setSelectedNode] = useState<Node | null>(null)
+
+  const [treeData, setTreeData] = useState([
+    { 
+      key: 'arm',
+      label: '作業機操作',
+      nodes: [
+        {
+          key: 'up_arm',
+          label: 'アームを上げる',
+        },
+        {
+          key: 'down_arm',
+          label: 'アームを下げる',
+        },
+      ],
+    },
+    {
+      key: 'move',
+      label: '移動体操作',
+      nodes: [
+          {
+            key: 'move',
+            label: '直進走行',
+          },
+          {
+            key: 'back',
+            label: '後進走行',
+          },
+        ],
+    },
+    {
+      key: 'dig',
+      label: '作業系',
+      nodes: [
+          {
+            key: 'dig_top_point',
+            label: '最高点の掘削',
+          },
+        ],
+    }
+  ]);
+
+
+
 
   console.log("hello");
   console.log(listener_setting);
@@ -226,6 +236,14 @@ export const Editor = () => {
       listener_setting = 1;
 
     });
+
+    function_list_listener.subscribe(message => {
+
+      //treeData = {};
+      setTreeData([{key:"aa",label:"b"}]);
+
+    });
+
   };
 
   useEffect(() => {
@@ -347,6 +365,19 @@ export const Editor = () => {
             onClickItem={({ key, label, ...props }) => {
               //this.navigate(props.url); // user defined prop
               console.log(key, label);
+
+              //treeData = {};
+
+              treeData = [
+                {
+                  label:'a',
+                  key:'b',
+                  id: '2',
+                  data: { label: '直進走行', name: 'move', args: {p1:[0,0,0],p2:[0,0,0]}},
+                  position: { x: 100, y: 100 },
+                }
+              ];
+
 
               // *** add node ***
 
