@@ -39,14 +39,14 @@ const treeData = [
     key: 'move',
     label: '移動系',
     nodes: [
-      {
-        key: 'move',
-        label: '直進走行',
-      },
-      {
-        key: 'back',
-        label: '後進走行',
-      },
+        {
+          key: 'move',
+          label: '直進走行',
+        },
+        {
+          key: 'back',
+          label: '後進走行',
+        },
       ],
   }
 ];
