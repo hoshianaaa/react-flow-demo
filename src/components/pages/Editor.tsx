@@ -162,6 +162,12 @@ const fitViewOptions: FitViewOptions = {
     messageType: 'std_msgs/String'
   });
 
+  const graph_listener = new Topic({
+    ros: ros,
+    name: 'init_graph',
+    messageType: 'std_msgs/String'
+  });
+
 var listener_setting = 0;
 
 export const Editor = () => {
@@ -263,6 +269,18 @@ export const Editor = () => {
 
     });
   }
+
+
+    graph_listener.subscribe(message => {
+
+      var graph = JSON.parse(message.data);
+      console.log("***graph***", graph);
+
+      setNodes(graph["nodes"]);
+      setEdges(graph["edges"]);
+
+    });
+
 
 
 
