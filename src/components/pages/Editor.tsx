@@ -54,6 +54,7 @@ export type NodeDataType = {
 // ノードの作成方法，種類: https://reactflow.dev/docs/api/nodes/node-types/
 
 const initialNodes: Node<NodeDataType>[] = [
+/*
   {
     id: '1',
     data: {
@@ -74,7 +75,7 @@ const initialNodes: Node<NodeDataType>[] = [
     data: { label: '直進走行', name: 'move', args: {p1:[0,0,0],p2:[0,0,0]}},
     position: { x: 100, y: 200 },
   },
-
+*/
 /*
   {
     id: '5',
@@ -158,17 +159,35 @@ const fitViewOptions: FitViewOptions = {
 
   const function_list_listener = new Topic({
     ros: ros,
-    name: '/function_server/function_list',
+    name: '/function_list_server/function_list',
     messageType: 'std_msgs/String'
   });
 
   const graph_listener = new Topic({
     ros: ros,
-    name: 'init_graph',
+    name: 'graph',
     messageType: 'std_msgs/String'
   });
 
 var listener_setting = 0;
+
+const graph_request = new Topic({
+  ros : ros,
+  name : '/graph_server/request',
+  messageType : 'std_msgs/Empty'
+});
+
+const function_list_request = new Topic({
+  ros : ros,
+  name : '/function_list_server/request',
+  messageType : 'std_msgs/Empty'
+});
+
+const empty_msg = new Message({
+});
+
+graph_request.publish(empty_msg);
+function_list_request.publish(empty_msg);
 
 export const Editor = () => {
   const { height: windowHeight, width: windowWidth } = useGetWindowSize()
