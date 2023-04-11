@@ -356,7 +356,6 @@ export const Editor = () => {
               console.log(typeof '6');
               console.log(typeof '6');
 
-
               const newNode = 
                 {
                   id: new_id.toString(),
@@ -383,10 +382,7 @@ export const Editor = () => {
                     newNode.data.args = args;
                 }
 
-
-
               setNodes((nds) => nds.concat(newNode));
-
 
             }}>
           </TreeMenu>
