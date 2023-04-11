@@ -382,19 +382,6 @@ export const Editor = () => {
               //this.navigate(props.url); // user defined prop
               console.log(key, label);
 
-              //treeData = {};
-
-              treeData = [
-                {
-                  label:'a',
-                  key:'b',
-                  id: '2',
-                  data: { label: '直進走行', name: 'move', args: {p1:[0,0,0],p2:[0,0,0]}},
-                  position: { x: 100, y: 100 },
-                }
-              ];
-
-
               // *** add node ***
 
               var new_id = Number(nodes.length) + 1;
