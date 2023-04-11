@@ -17,6 +17,7 @@ import 'node_modules/react-simple-tree-menu/dist/main.css';
 // react-icons
 import { FaPlay } from 'react-icons/fa';
 import { FaStop } from 'react-icons/fa';
+import { MdStopCircle } from 'react-icons/fa';
 
 
 // 動的変数 {} 内の値を変化させる場合はstateを使う: https://qiita.com/Kazunori-Kimura/items/d94ddd1a8d8e2e39d504
