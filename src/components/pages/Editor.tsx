@@ -186,8 +186,13 @@ const function_list_request = new Topic({
 const empty_msg = new Message({
 });
 
-graph_request.publish(empty_msg);
-function_list_request.publish(empty_msg);
+setTimeout(function () {
+
+  graph_request.publish(empty_msg);
+  function_list_request.publish(empty_msg);
+
+}, 500);
+
 
 export const Editor = () => {
   const { height: windowHeight, width: windowWidth } = useGetWindowSize()
