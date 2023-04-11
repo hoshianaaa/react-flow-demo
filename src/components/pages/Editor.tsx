@@ -16,6 +16,7 @@ import 'node_modules/react-simple-tree-menu/dist/main.css';
 
 // react-icons
 import { FaPlay } from 'react-icons/fa';
+import { FaStop } from 'react-icons/fa';
 
 
 // 動的変数 {} 内の値を変化させる場合はstateを使う: https://qiita.com/Kazunori-Kimura/items/d94ddd1a8d8e2e39d504
@@ -359,15 +360,29 @@ export const Editor = () => {
   return (
     
     <div>
-      <div style={{ padding: 20 , backgroundColor:'white', border: '1px solid lightgray', color: 'darkcyan'}}>
-        <button
-          sytle={{ border: '3px solid #333' }}
-          type="button"
-          onClick={handleClick}
-        > 
-          <FaPlay />
-        </button>
-       : 実行
+      <div style={{ flex:1, flexDirection:'row', padding: 20 , backgroundColor:'white', border: '1px solid lightgray', color: 'darkcyan'}}>
+        <div style={{color:'darkcyan'}}>
+          <button
+            sytle={{ border: '3px solid #333' }}
+            type="button"
+            onClick={handleClick}
+          > 
+            <FaPlay />
+          </button>
+        : 実行
+        </div>
+
+        <div style={{color:'red'}}>
+          <button
+            sytle={{ border: '3px solid #333' }}
+            type="button"
+            onClick={handleClick}
+          > 
+            <FaStop />
+          </button>
+         : 実行
+         </div>
+
       </div>
       <div style={{ height: windowHeight, width: windowWidth, display: 'flex' }}>
         <div>
