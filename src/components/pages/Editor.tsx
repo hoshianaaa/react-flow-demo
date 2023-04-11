@@ -380,7 +380,7 @@ export const Editor = () => {
           > 
             <FaStop />
           </button>
-         : 実行
+         : 停止
          </div>
 
       </div>
