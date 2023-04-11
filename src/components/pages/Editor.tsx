@@ -426,6 +426,12 @@ export const Editor = () => {
                   }
                 };
 
+
+              if (type=="DUAL_RESULT")
+              {
+                newNode.type = "eventNode";
+              }
+
               setNodes((nds) => nds.concat(newNode));
 
             }}>
