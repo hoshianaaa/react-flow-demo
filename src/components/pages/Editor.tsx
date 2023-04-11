@@ -256,6 +256,8 @@ export const Editor = () => {
       for (var i=0;i<function_list.length;i++)
       {
         function_list[i]["key"] = function_list[i]["name"];
+        for (var j=0;j<function_list[i].nodes.length;j++)
+        function_list[i].nodes[j]["key"] = function_list[i].nodes[j]["name"];
       }
 
     });
@@ -360,7 +362,7 @@ export const Editor = () => {
   return (
     
     <div>
-      <div style={{ flex:1, flexDirection:'row', padding: 20 , backgroundColor:'white', border: '1px solid lightgray', color: 'darkcyan'}}>
+      <div style={{ flex:1, flexDirection:'row', padding: 20 , backgroundColor:'white', border: '1px solid lightgray'}}>
         <div style={{color:'darkcyan'}}>
           <button
             sytle={{ border: '3px solid #333' }}
@@ -414,6 +416,7 @@ export const Editor = () => {
                     label: label,
                     name: key,
                     color: 'red',
+                    args: args
                   },
                   position: { x: 100, y: 100 },
                   style: {
@@ -422,16 +425,6 @@ export const Editor = () => {
                     color: '#F331F5',
                   }
                 };
-
-                var args = null;
-                if (key == "move")
-                {
-                  args = {p1:[0,0,0],p2:[0,0,0]};
-                }
-                if (args != null)
-                {
-                    newNode.data.args = args;
-                }
 
               setNodes((nds) => nds.concat(newNode));
 
