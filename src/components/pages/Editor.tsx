@@ -337,7 +337,11 @@ export const Editor = () => {
       </div>
       <div style={{ height: windowHeight, width: windowWidth, display: 'flex' }}>
         <div>
-          <h style={{ color:'gray', fontSize:'18px' }}>司令一覧</h>
+
+          <div style={{ textAlign:'left', border: '1px solid lightgray'}} >
+            <h style={{ color:'gray', fontSize:'18px' }}>司令一覧</h>
+          </div>
+
           <TreeMenu data={treeData} 
             hasSearch='false'
             onClickItem={({ key, label, ...props }) => {
