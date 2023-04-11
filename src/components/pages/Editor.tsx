@@ -20,9 +20,6 @@ import { FaPlay } from 'react-icons/fa';
 
 // 動的変数 {} 内の値を変化させる場合はstateを使う: https://qiita.com/Kazunori-Kimura/items/d94ddd1a8d8e2e39d504
 
-
-
-
 import ReactFlow, {
   addEdge,
   applyEdgeChanges,
@@ -159,7 +156,7 @@ const fitViewOptions: FitViewOptions = {
 
   const function_list_listener = new Topic({
     ros: ros,
-    name: '/wheel_loader1/function_list',
+    name: '/function_server/function_list',
     messageType: 'std_msgs/String'
   });
 
@@ -174,6 +171,7 @@ export const Editor = () => {
   const [selectedNode, setSelectedNode] = useState<Node | null>(null)
 
   const [treeData, setTreeData] = useState([
+  /*
     { 
       key: 'arm',
       label: '作業機操作',
@@ -212,6 +210,7 @@ export const Editor = () => {
           },
         ],
     }
+    */
   ]);
 
 
@@ -233,18 +232,39 @@ export const Editor = () => {
       //console.log(id);
       //document.getElementById("color_value").value = id;
 
-      listener_setting = 1;
+    listener_setting = 1;
 
     });
+  };
 
+  if (treeData.length>0)
+  {
+    function_list_listener.unsubscribe();
+  }
+  else
+  {
     function_list_listener.subscribe(message => {
 
+      //console.log(message.data);
       //treeData = {};
-      setTreeData([{key:"aa",label:"b"}]);
+      //setTreeData([{key:"aa",label:"b"}]);
+
+      var function_list = JSON.parse(message.data);
+      console.log("function_list",function_list);
+      console.log("treeData",treeData);
+
+      setTreeData(function_list);
+      console.log(treeData);
+
+      for (var i=0;i<function_list.length;i++)
+      {
+        function_list[i]["key"] = function_list[i]["name"];
+      }
 
     });
+  }
 
-  };
+
 
   useEffect(() => {
     setNodes((nds) =>
