@@ -378,9 +378,11 @@ export const Editor = () => {
 
           <TreeMenu data={treeData} 
             hasSearch='false'
-            onClickItem={({ key, label, ...props }) => {
+            onClickItem={({ key, label, args, type, ...props }) => {
               //this.navigate(props.url); // user defined prop
               console.log(key, label);
+              console.log("args:",args);
+              console.log("type:",type);
 
               // *** add node ***
 
