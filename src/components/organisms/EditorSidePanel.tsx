@@ -78,7 +78,7 @@ export const EditorSidePanel = ({ settings, node }: EditorSidePanelProps) => {
           <p> {JSON.stringify(node.data.args)} </p>
         </div>
         <br/>
-        <div className="text-center flex justify-center">
+        <div className="text-center">
           <JSONEditor data={node.data.args}   onChange={onJsonChange} collapsible showRemoveButton='false'/>
         </div>
     </div>
