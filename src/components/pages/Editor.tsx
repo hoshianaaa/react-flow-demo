@@ -20,7 +20,7 @@ import { FaStop } from 'react-icons/fa';
 import { MdStopCircle } from 'react-icons/fa';
 
 import { For } from 'react-loops'
-import { Select } from 'react-select'
+import Select from 'react-select'
 
 // 動的変数 {} 内の値を変化させる場合はstateを使う: https://qiita.com/Kazunori-Kimura/items/d94ddd1a8d8e2e39d504
 
@@ -241,6 +241,11 @@ export const Editor = () => {
   const [nodeBg, setNodeBg] = useState('#FFFFFF');
   const [selectedNode, setSelectedNode] = useState<Node | null>(null)
 
+  const options = [
+    { value: 'chocolate', label: 'Chocolate' },
+    { value: 'strawberry', label: 'Strawberry' },
+    { value: 'vanilla', label: 'Vanilla' }
+  ]
 
   const itemList = ['a', 'b', 'c'];
 
@@ -477,6 +482,13 @@ export const Editor = () => {
       </div>
       <div style={{ height: windowHeight, width: windowWidth, display: 'flex' }}>
         <div>
+
+          <div style={{ textAlign:'left', border: '1px solid lightgray'}} >
+           <h style={{ color:'gray', fontSize:'16px', padding:'10px' }}>建機の選択</h>
+          </div>
+          <div style={{ textAlign:'left', border: '1px solid lightgray', color:'gray', fontSize:'16px', padding:'10px' }} >
+          <Select options={options} />
+          </div>
 
           <div style={{ textAlign:'left', border: '1px solid lightgray'}} >
             <h style={{ color:'gray', fontSize:'16px', padding:'10px' }}>司令一覧</h>
