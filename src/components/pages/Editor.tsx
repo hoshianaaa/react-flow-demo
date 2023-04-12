@@ -66,6 +66,8 @@ const fitViewOptions: FitViewOptions = {
   padding: 0.2,
 }
 
+var namespace = "wheelLoader/";
+
 // ros websocket setting 
 
   var ros = new Ros({
@@ -86,25 +88,25 @@ const fitViewOptions: FitViewOptions = {
 
   const ns_listener = new Topic({
     ros: ros,
-    name: '/ui/flow/ns',
+    name: namespace + 'ui/flow/ns',
     messageType: 'std_msgs/String'
   });
 
   const function_list_listener = new Topic({
     ros: ros,
-    name: '/function_list_server/function_list',
+    name: namespace + 'function_list_server/function_list',
     messageType: 'std_msgs/String'
   });
 
   const graph_listener = new Topic({
     ros: ros,
-    name: 'graph',
+    name: namespace + 'graph',
     messageType: 'std_msgs/String'
   });
 
   const listener = new Topic({
     ros: ros,
-    name: '/ui/active_ids',
+    name: namespace + 'ui/active_ids',
     messageType: 'std_msgs/String'
   });
 
@@ -112,24 +114,25 @@ const fitViewOptions: FitViewOptions = {
 
   var ns = [];
 
+
   const empty_msg = new Message({
   });
 
   const ns_request = new Topic({
     ros : ros,
-    name : 'ui/flow/request_ns',
+    name : namespace + 'ui/flow/request_ns',
     messageType : 'std_msgs/Empty'
   });
 
   const graph_request = new Topic({
     ros : ros,
-    name : '/graph_server/request',
+    name : namespace + 'graph_server/request',
     messageType : 'std_msgs/Empty'
   });
 
   const function_list_request = new Topic({
     ros : ros,
-    name : '/function_list_server/request',
+    name : namespace + 'function_list_server/request',
     messageType : 'std_msgs/Empty'
   });
 
@@ -318,7 +321,7 @@ export const Editor = () => {
     const cmdVel = new Topic({
 
       ros : ros,
-      name : '/ui/flow/nodes',
+      name : namespace + 'ui/flow/nodes',
       messageType : 'std_msgs/String'
 
     });
@@ -335,7 +338,7 @@ export const Editor = () => {
       const cmdVel2 = new Topic({
 
         ros : ros,
-        name : '/ui/flow/edges',
+        name : namespace + 'ui/flow/edges',
         messageType : 'std_msgs/String'
 
       });
