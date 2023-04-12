@@ -21,6 +21,17 @@ import { MdStopCircle } from 'react-icons/fa';
 
 import { For } from 'react-loops'
 import Select from 'react-select'
+import { useLocation } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
+
+// param
+
+import {
+  Routes,
+  Route,
+  useSearchParams,
+  BrowserRouter
+} from "react-router-dom"
 
 // 動的変数 {} 内の値を変化させる場合はstateを使う: https://qiita.com/Kazunori-Kimura/items/d94ddd1a8d8e2e39d504
 
@@ -66,7 +77,17 @@ const fitViewOptions: FitViewOptions = {
   padding: 0.2,
 }
 
-var namespace = "wheelLoader/";
+
+//var params = useSearchParams();
+//const params = new URLSearchParams(window.location.pathname);
+//var namespace = params.get("namespace");
+//const search = useLocation().search;
+//const query2 = new URLSearchParams(search);
+
+
+//var namespace = query2.get('namespace')
+
+var namespace = "wheelLoader2/";
 
 // ros websocket setting 
 
@@ -146,6 +167,7 @@ var namespace = "wheelLoader/";
 
 
 export const Editor = () => {
+  //let userId = useParams();
   const { height: windowHeight, width: windowWidth } = useGetWindowSize()
   const [nodes, setNodes] = useState<Node[]>(initialNodes)
   const [edges, setEdges] = useState<Edge[]>(initialEdges)
