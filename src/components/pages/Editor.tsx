@@ -174,13 +174,17 @@ export const Editor = () => {
 
     });
 
+/*
     ns_listener.subscribe(message => {
       console.log("namespace");
       console.log(message.data);
       var d = message.data;
-      setNameSpaces([{ "value": d, "label": d}]);
+
       console.log("namespaces");
       console.log(namespaces);
+
+      console.log(ns);
+      console.log(ns.includes(d));
 
       if (ns.includes(d)) 
       {
@@ -189,11 +193,35 @@ export const Editor = () => {
       else
       {
         ns.push(d);
+
+        console.log("ns");
+        console.log(ns);
+
       }
 
-      listener_setting = 1;
+      var val = [];
+      
+      for (var i=0;i<ns.length;i++)
+      {
+        val.push({ "value": ns[i], "label": ns[i]});
+      }
 
+      console.log("val");
+      console.log(val);
+
+      setNameSpaces([
+        { value: 'bbbbbb', label: 'bbbbbb' },
+        { value: 'strawberry', label: 'Strawberry' },
+        { value: 'vanilla', label: 'Vanilla' }
+      ]);
+
+      console.log("after namespaces");
+      console.log(namespaces);
+
+      //listener_setting = 1;
     });
+    */
+
   };
 
   if (treeData.length>0)
