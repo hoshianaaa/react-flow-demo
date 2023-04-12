@@ -56,79 +56,10 @@ export type NodeDataType = {
 // ノードの作成方法，種類: https://reactflow.dev/docs/api/nodes/node-types/
 
 const initialNodes: Node<NodeDataType>[] = [
-/*
-  {
-    id: '1',
-    data: {
-      label: 'スタート',
-      name: 'start',
-    },
-    position: { x: -200, y: -70 },
-    deletable: 'false',
-    type: 'input',
-  },
-  {
-    id: '2',
-    data: { label: '直進走行', name: 'move', args: {p1:[0,0,0],p2:[0,0,0]}},
-    position: { x: 100, y: 100 },
-  },
-  {
-    id: '3',
-    data: { label: '直進走行', name: 'move', args: {p1:[0,0,0],p2:[0,0,0]}},
-    position: { x: 100, y: 200 },
-  },
-*/
-/*
-  {
-    id: '5',
-    data: {
-      label: '最高点の掘削',
-      name: 'dig top point',
-      color: '#F331F5',
-      args: [1,1,1],
-    },
-    position: { x: -50, y: 0 },
-    type: 'DUAL_RESULT',
-  },
-  {
-    id: '1',
-    data: {
-      label: 'スタート',
-      name: 'start',
-    },
-    position: { x: -200, y: -70 },
-    deletable: 'false',
-    type: 'input',
-  },
-  {
-    id: '2',
-    data: { label: 'アームを下ろす', name: 'down_arm'},
-    position: { x: 100, y: 100 },
-  },
-  {
-    id: '3',
-    data: { label: '直進走行', name: 'move', args: {p1:[-5,11,0],p2:[4,11,0]}},
-    position: { x: 100, y: 200 },
-  },
-  {
-    id: '4',
-    data: { label: 'アームを上げる', name: 'up_arm'},
-    position: { x: 5, y: 300 },
-  },
-  */
-
 ]
 
 // markerEnd: { type: MarkerType.ArrowClosed },を追加すると矢印がでる
 const initialEdges: Edge[] = [
-/*
-  { id: 'e1-5', source: '1', target: '5' },
-  { id: 'e5-2', source: '5', target: '2', sourceHandle: 'SUCCEED'},
-  { id: 'e5-2', source: '5', target: '4', sourceHandle: 'FAILED'},
-  { id: 'e2-3', source: '2', target: '3' },
-  */
-  { id: 'e1-2', source: '1', target: '2' },
-  { id: 'e2-3', source: '2', target: '3' },
 ]
 
 const fitViewOptions: FitViewOptions = {
