@@ -247,7 +247,6 @@ export const Editor = () => {
     { value: 'vanilla', label: 'Vanilla' }
   ]);
 
-  const itemList = ['a', 'b', 'c'];
 
   const [treeData, setTreeData] = useState([
 
