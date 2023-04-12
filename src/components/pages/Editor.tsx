@@ -84,9 +84,9 @@ const fitViewOptions: FitViewOptions = {
     console.log('Connection to websocket server closed.');
   });
 
-  const listener = new Topic({
+  const ns_listener = new Topic({
     ros: ros,
-    name: '/ui/active_ids',
+    name: '/ui/flow/ns',
     messageType: 'std_msgs/String'
   });
 
@@ -102,66 +102,44 @@ const fitViewOptions: FitViewOptions = {
     messageType: 'std_msgs/String'
   });
 
-var listener_setting = 0;
+  const listener = new Topic({
+    ros: ros,
+    name: '/ui/active_ids',
+    messageType: 'std_msgs/String'
+  });
 
-const ns_request = new Topic({
-  ros : ros,
-  name : 'ui/flow/request_ns',
-  messageType : 'std_msgs/Empty'
-});
+  var listener_setting = 0;
 
-const ns_listener = new Topic({
-  ros: ros,
-  name: '/ui/flow/ns',
-  messageType: 'std_msgs/String'
-});
+  var ns = [];
 
-var ns = [];
+  const empty_msg = new Message({
+  });
 
-const empty_msg = new Message({
-});
+  const ns_request = new Topic({
+    ros : ros,
+    name : 'ui/flow/request_ns',
+    messageType : 'std_msgs/Empty'
+  });
 
-ns_request.publish(empty_msg);
+  const graph_request = new Topic({
+    ros : ros,
+    name : '/graph_server/request',
+    messageType : 'std_msgs/Empty'
+  });
 
-ns_listener.subscribe(message => {
-  console.log("namespace");
-  console.log(message.data);
-  ns.push(message.data);
-});
+  const function_list_request = new Topic({
+    ros : ros,
+    name : '/function_list_server/request',
+    messageType : 'std_msgs/Empty'
+  });
 
-
-/*
-while (true) {
+  setTimeout(function () {
 
     ns_request.publish(empty_msg);
-    console.log("ns");
-    console.log(ns);
-    if (ns.length > 0)
-    {
-      break;
-    }
+    graph_request.publish(empty_msg);
+    function_list_request.publish(empty_msg);
 
-}
-*/
-
-const graph_request = new Topic({
-  ros : ros,
-  name : '/graph_server/request',
-  messageType : 'std_msgs/Empty'
-});
-
-const function_list_request = new Topic({
-  ros : ros,
-  name : '/function_list_server/request',
-  messageType : 'std_msgs/Empty'
-});
-
-setTimeout(function () {
-
-  graph_request.publish(empty_msg);
-  function_list_request.publish(empty_msg);
-
-}, 50);
+  }, 50);
 
 
 export const Editor = () => {
@@ -221,6 +199,15 @@ export const Editor = () => {
 
     });
   }
+
+/*
+    ns_listener.subscribe(message => {
+      console.log("namespace");
+      console.log(message.data);
+      ns.push(message.data);
+    });
+*/
+
 
 
     graph_listener.subscribe(message => {
