@@ -351,12 +351,15 @@ export const Editor = () => {
 
     var n = [];
     var e = [];
+    var f = [];
 
     for (var i=0;i<2;i++)
     {
       setNodes(n);
       setEdges(e);
     }
+
+    setTreeData(f);
 
     const cmdVel = new Topic({
 
