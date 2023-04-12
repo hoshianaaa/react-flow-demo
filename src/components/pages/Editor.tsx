@@ -241,11 +241,11 @@ export const Editor = () => {
   const [nodeBg, setNodeBg] = useState('#FFFFFF');
   const [selectedNode, setSelectedNode] = useState<Node | null>(null)
 
-  const options = [
+  const [options, setOptions] = useState([
     { value: 'chocolate', label: 'Chocolate' },
     { value: 'strawberry', label: 'Strawberry' },
     { value: 'vanilla', label: 'Vanilla' }
-  ]
+  ]);
 
   const itemList = ['a', 'b', 'c'];
 
