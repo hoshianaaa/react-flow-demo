@@ -150,7 +150,7 @@ export const Editor = () => {
   const [nodeBg, setNodeBg] = useState('#FFFFFF');
   const [selectedNode, setSelectedNode] = useState<Node | null>(null)
 
-  const [options, setOptions] = useState([
+  const [namespaces, setNameSpaces] = useState([
     { value: 'chocolate', label: 'Chocolate' },
     { value: 'strawberry', label: 'Strawberry' },
     { value: 'vanilla', label: 'Vanilla' }
@@ -203,6 +203,7 @@ export const Editor = () => {
   ns_listener.subscribe(message => {
     console.log("namespace");
     console.log(message.data);
+
   });
 
   graph_listener.subscribe(message => {
@@ -232,7 +233,6 @@ export const Editor = () => {
       {
         node.style = { ...node.style, backgroundColor: 'transparent', border: '1px solid #F331F5', color: '#F331F5' };
       }
-
         return node;
       })
     );
@@ -348,7 +348,7 @@ export const Editor = () => {
            <h style={{ color:'gray', fontSize:'16px', padding:'10px' }}>建機の選択</h>
           </div>
           <div style={{ textAlign:'left', border: '1px solid lightgray', color:'gray', fontSize:'16px', padding:'10px' }} >
-          <Select options={options} />
+          <Select options={namespaces} />
           </div>
 
           <div style={{ textAlign:'left', border: '1px solid lightgray'}} >
