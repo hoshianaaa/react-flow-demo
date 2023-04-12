@@ -345,8 +345,18 @@ export const Editor = () => {
 
   const handleClick = () => {
 
+
     initialize();
     namespace = "wheelLoader/";
+
+    var n = [];
+    var e = [];
+
+    for (var i=0;i<2;i++)
+    {
+      setNodes(n);
+      setEdges(e);
+    }
 
     const cmdVel = new Topic({
 
