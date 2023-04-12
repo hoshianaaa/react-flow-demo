@@ -181,6 +181,18 @@ export const Editor = () => {
       setNameSpaces([{ "value": d, "label": d}]);
       console.log("namespaces");
       console.log(namespaces);
+
+      if (ns.includes(d)) 
+      {
+
+      }
+      else
+      {
+        ns.push(d);
+      }
+
+      listener_setting = 1;
+
     });
   };
 
