@@ -249,48 +249,6 @@ export const Editor = () => {
 
 
   const [treeData, setTreeData] = useState([
-
-
-  /*
-    { 
-      key: 'arm',
-      label: '作業機操作',
-      nodes: [
-        {
-          key: 'up_arm',
-          label: 'アームを上げる',
-        },
-        {
-          key: 'down_arm',
-          label: 'アームを下げる',
-        },
-      ],
-    },
-    {
-      key: 'move',
-      label: '移動体操作',
-      nodes: [
-          {
-            key: 'move',
-            label: '直進走行',
-          },
-          {
-            key: 'back',
-            label: '後進走行',
-          },
-        ],
-    },
-    {
-      key: 'dig',
-      label: '作業系',
-      nodes: [
-          {
-            key: 'dig_top_point',
-            label: '最高点の掘削',
-          },
-        ],
-    }
-    */
   ]);
 
   console.log("hello");
@@ -300,16 +258,10 @@ export const Editor = () => {
   {
     listener.subscribe(message => {
       var id = message['data'];
-      //console.log("** nodes **");
-      //console.log(nodes);
-      //nodeBg = id;
 
       setNodeBg(id);
 
-      //console.log(id);
-      //document.getElementById("color_value").value = id;
-
-    listener_setting = 1;
+      listener_setting = 1;
 
     });
   };
@@ -349,9 +301,6 @@ export const Editor = () => {
       setEdges(graph["edges"]);
 
     });
-
-
-
 
   useEffect(() => {
     setNodes((nds) =>
