@@ -191,7 +191,7 @@ setTimeout(function () {
   graph_request.publish(empty_msg);
   function_list_request.publish(empty_msg);
 
-}, 500);
+}, 50);
 
 
 export const Editor = () => {
@@ -440,7 +440,12 @@ export const Editor = () => {
             hasSearch='false'
             onClickItem={({ key, label, args, type, ...props }) => {
               //this.navigate(props.url); // user defined prop
-              console.log(key, label);
+              console.log("key:", key);
+              console.log("label:", label);
+              const words = key.split('/');
+              key = words[words.length-1]
+              console.log("key:", key);
+              
               console.log("args:",args);
               console.log("type:",type);
 
