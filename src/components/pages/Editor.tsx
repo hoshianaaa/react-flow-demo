@@ -78,14 +78,6 @@ const fitViewOptions: FitViewOptions = {
 }
 
 
-//var params = useSearchParams();
-//const params = new URLSearchParams(window.location.pathname);
-//var namespace = params.get("namespace");
-//const search = useLocation().search;
-//const query2 = new URLSearchParams(search);
-
-
-//var namespace = query2.get('namespace')
 
 var namespace = "wheelLoader2/";
 
@@ -107,51 +99,61 @@ var namespace = "wheelLoader2/";
     console.log('Connection to websocket server closed.');
   });
 
-  const ns_listener = new Topic({
+
+let ns_listener = null;
+let function_list_listener = null;
+let graph_listener = null;
+let listener = null;
+let listener_setting = 0;
+const empty_msg = new Message({
+});
+let ns_request = null;
+let graph_request = null;
+let function_list_request = null;
+
+
+const initialize = () => {
+
+  ns_listener = new Topic({
     ros: ros,
     name: namespace + 'ui/flow/ns',
     messageType: 'std_msgs/String'
   });
 
-  const function_list_listener = new Topic({
+  function_list_listener = new Topic({
     ros: ros,
     name: namespace + 'function_list_server/function_list',
     messageType: 'std_msgs/String'
   });
 
-  const graph_listener = new Topic({
+  graph_listener = new Topic({
     ros: ros,
     name: namespace + 'graph',
     messageType: 'std_msgs/String'
   });
 
-  const listener = new Topic({
+  listener = new Topic({
     ros: ros,
     name: namespace + 'ui/active_ids',
     messageType: 'std_msgs/String'
   });
 
-  var listener_setting = 0;
-
-  var ns = [];
+  listener_setting = 0;
 
 
-  const empty_msg = new Message({
-  });
-
-  const ns_request = new Topic({
+  ns_request = new Topic({
     ros : ros,
     name : namespace + 'ui/flow/request_ns',
     messageType : 'std_msgs/Empty'
   });
 
-  const graph_request = new Topic({
+  graph_request = new Topic({
     ros : ros,
     name : namespace + 'graph_server/request',
     messageType : 'std_msgs/Empty'
   });
 
-  const function_list_request = new Topic({
+  function_list_request = new Topic({
     ros : ros,
     name : namespace + 'function_list_server/request',
     messageType : 'std_msgs/Empty'
@@ -165,6 +167,9 @@ var namespace = "wheelLoader2/";
 
   }, 50);
 
+}
+
+initialize();
 
 export const Editor = () => {
   //let userId = useParams();
@@ -339,6 +344,9 @@ export const Editor = () => {
   )
 
   const handleClick = () => {
+
+    initialize();
+    namespace = "wheelLoader/";
 
     const cmdVel = new Topic({
 
