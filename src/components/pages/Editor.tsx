@@ -19,6 +19,8 @@ import { FaPlay } from 'react-icons/fa';
 import { FaStop } from 'react-icons/fa';
 import { MdStopCircle } from 'react-icons/fa';
 
+import { For } from 'react-loops'
+import { Select } from 'react-select'
 
 // 動的変数 {} 内の値を変化させる場合はstateを使う: https://qiita.com/Kazunori-Kimura/items/d94ddd1a8d8e2e39d504
 
@@ -171,6 +173,46 @@ const fitViewOptions: FitViewOptions = {
 
 var listener_setting = 0;
 
+const ns_request = new Topic({
+  ros : ros,
+  name : 'ui/flow/request_ns',
+  messageType : 'std_msgs/Empty'
+});
+
+const ns_listener = new Topic({
+  ros: ros,
+  name: '/ui/flow/ns',
+  messageType: 'std_msgs/String'
+});
+
+var ns = [];
+
+const empty_msg = new Message({
+});
+
+ns_request.publish(empty_msg);
+
+ns_listener.subscribe(message => {
+  console.log("namespace");
+  console.log(message.data);
+  ns.push(message.data);
+});
+
+
+/*
+while (true) {
+
+    ns_request.publish(empty_msg);
+    console.log("ns");
+    console.log(ns);
+    if (ns.length > 0)
+    {
+      break;
+    }
+
+}
+*/
+
 const graph_request = new Topic({
   ros : ros,
   name : '/graph_server/request',
@@ -181,9 +223,6 @@ const function_list_request = new Topic({
   ros : ros,
   name : '/function_list_server/request',
   messageType : 'std_msgs/Empty'
-});
-
-const empty_msg = new Message({
 });
 
 setTimeout(function () {
@@ -202,7 +241,12 @@ export const Editor = () => {
   const [nodeBg, setNodeBg] = useState('#FFFFFF');
   const [selectedNode, setSelectedNode] = useState<Node | null>(null)
 
+
+  const itemList = ['a', 'b', 'c'];
+
   const [treeData, setTreeData] = useState([
+
+
   /*
     { 
       key: 'arm',
@@ -244,9 +288,6 @@ export const Editor = () => {
     }
     */
   ]);
-
-
-
 
   console.log("hello");
   console.log(listener_setting);
@@ -402,10 +443,15 @@ export const Editor = () => {
   };
 
 
+
+
   return (
     
     <div>
+
+
       <div style={{ flex:1, flexDirection:'row', padding: 20 , backgroundColor:'white', border: '1px solid lightgray'}}>
+
         <div style={{color:'darkcyan'}}>
           <button
             sytle={{ border: '3px solid #333' }}
