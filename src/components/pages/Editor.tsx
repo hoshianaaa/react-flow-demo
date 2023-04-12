@@ -200,25 +200,20 @@ export const Editor = () => {
     });
   }
 
-/*
-    ns_listener.subscribe(message => {
-      console.log("namespace");
-      console.log(message.data);
-      ns.push(message.data);
-    });
-*/
+  ns_listener.subscribe(message => {
+    console.log("namespace");
+    console.log(message.data);
+  });
 
+  graph_listener.subscribe(message => {
 
+    var graph = JSON.parse(message.data);
+    console.log("***graph***", graph);
 
-    graph_listener.subscribe(message => {
+    setNodes(graph["nodes"]);
+    setEdges(graph["edges"]);
 
-      var graph = JSON.parse(message.data);
-      console.log("***graph***", graph);
-
-      setNodes(graph["nodes"]);
-      setEdges(graph["edges"]);
-
-    });
+  });
 
   useEffect(() => {
     setNodes((nds) =>
