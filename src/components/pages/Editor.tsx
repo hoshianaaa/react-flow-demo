@@ -173,6 +173,15 @@ export const Editor = () => {
       listener_setting = 1;
 
     });
+
+    ns_listener.subscribe(message => {
+      console.log("namespace");
+      console.log(message.data);
+      var d = message.data;
+      setNameSpaces([{ "value": d, "label": d}]);
+      console.log("namespaces");
+      console.log(namespaces);
+    });
   };
 
   if (treeData.length>0)
@@ -199,13 +208,6 @@ export const Editor = () => {
 
     });
   }
-
-  ns_listener.subscribe(message => {
-    console.log("namespace");
-    console.log(message.data);
-
-  });
-
   graph_listener.subscribe(message => {
 
     var graph = JSON.parse(message.data);
@@ -314,7 +316,6 @@ export const Editor = () => {
   return (
     
     <div>
-
 
       <div style={{ flex:1, flexDirection:'row', padding: 20 , backgroundColor:'white', border: '1px solid lightgray'}}>
 
