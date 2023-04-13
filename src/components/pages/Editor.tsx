@@ -345,6 +345,8 @@ export const Editor = () => {
     [],
   )
 
+
+
   const handleClick = () => {
 
 
@@ -396,6 +398,11 @@ export const Editor = () => {
       cmdVel2.publish(twist2);
 
     }, 500);
+
+  };
+
+  const handleClick2 = () => {
+    
   };
 
 
