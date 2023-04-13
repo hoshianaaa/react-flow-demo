@@ -349,22 +349,6 @@ export const Editor = () => {
 
   const handleClick = () => {
 
-
-    initialize();
-    namespace = "wheelLoader/";
-
-    var n = [];
-    var e = [];
-    var f = [];
-
-    for (var i=0;i<2;i++)
-    {
-      setNodes(n);
-      setEdges(e);
-    }
-
-    setTreeData(f);
-
     const cmdVel = new Topic({
 
       ros : ros,
@@ -402,6 +386,21 @@ export const Editor = () => {
   };
 
   const handleClick2 = () => {
+
+    initialize();
+    namespace = str + "/";
+
+    var n = [];
+    var e = [];
+    var f = [];
+
+    for (var i=0;i<2;i++)
+    {
+      setNodes(n);
+      setEdges(e);
+    }
+
+    setTreeData(f);
     
   };
 
@@ -456,7 +455,7 @@ export const Editor = () => {
           <button
               sytle={{ border: '3px solid #333' }}
               type="button"
-              onClick={handleClick}
+              onClick={handleClick2}
             > 接続
           </button>
 
