@@ -189,6 +189,9 @@ export const Editor = () => {
   const [treeData, setTreeData] = useState([
   ]);
 
+  const [str, setStr] = useState("wheelLoader");
+
+
   console.log("hello");
   console.log(listener_setting);
 
@@ -435,6 +438,21 @@ export const Editor = () => {
           </div>
           <div style={{ textAlign:'left', border: '1px solid lightgray', color:'gray', fontSize:'16px', padding:'10px' }} >
           <Select options={namespaces} />
+
+          建機名:
+          <input
+            type="text"
+            value={str}
+            onChange={event => setStr(event.target.value)}
+          />
+
+          <button
+              sytle={{ border: '3px solid #333' }}
+              type="button"
+              onClick={handleClick}
+            > 接続
+          </button>
+
           </div>
 
           <div style={{ textAlign:'left', border: '1px solid lightgray'}} >
