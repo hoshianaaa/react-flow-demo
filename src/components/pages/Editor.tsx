@@ -140,7 +140,6 @@ const initialize = () => {
 
   listener_setting = 0;
 
-
   ns_request = new Topic({
     ros : ros,
     name : namespace + 'ui/flow/request_ns',
