@@ -15,9 +15,15 @@ import 'node_modules/react-simple-tree-menu/dist/main.css';
 //import 'src/components/pages/treemenu.css';
 
 // react-icons
+// https://qiita.com/stin_dev/items/5755e14805e60718620c
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTwitter } from "@fortawesome/free-brands-svg-icons";
+import { faCalendar } from "@fortawesome/free-regular-svg-icons";
+import { faCoffee } from "@fortawesome/free-solid-svg-icons";
 import { FaPlay } from 'react-icons/fa';
 import { FaStop } from 'react-icons/fa';
 import { MdStopCircle } from 'react-icons/fa';
+import { faTruckPlow } from 'react-icons/fa';
 
 import { For } from 'react-loops'
 import Select from 'react-select'
