@@ -424,7 +424,7 @@ export const Editor = () => {
         : 実行
         </div>
 
-        <div style={{color:'red'}}>
+        <div style={{color:'#bb0000'}}>
           <button
             sytle={{ border: '3px solid #333' }}
             type="button"
