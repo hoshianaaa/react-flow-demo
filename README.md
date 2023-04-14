@@ -21,9 +21,18 @@ echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/source
  sudo apt-get update && sudo apt-get install yarn
 ```
 
+- node
+# https://www.grepper.com/answers/329584/The+engine+%22node%22+is+incompatible+with+this+module.+Expected+version+%22%5E14%22.+Got+%2215.4.0%22
+```
+curl -fsSL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+sudo apt-get install -y nodejs
+```
+
+
+# https://zenn.dev/red_frasco/articles/637837eee794f7
+
 ```bash
-npm run dev
-# or
+yarn
 yarn dev
 ```
 
