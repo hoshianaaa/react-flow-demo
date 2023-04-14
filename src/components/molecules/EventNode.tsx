@@ -30,7 +30,7 @@ export const EventNode = ({ data, selected }: EventNodeProps) => {
             SUCCEED
           </p>
           <p style={{ top: 16, color: 'yellow', right: 8, textAlign: 'right',fontSize:'10px',position:"absolute"}}>
-            FAILED
+            FINISHED
           </p>
 
 
