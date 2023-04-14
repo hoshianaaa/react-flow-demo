@@ -28,6 +28,12 @@ curl -fsSL https://deb.nodesource.com/setup_14.x | sudo -E bash -
 sudo apt-get install -y nodejs
 ```
 
+- rosbridge_server
+
+```
+sudo apt-get install ros-noetic-rosbridge-server
+```
+
 
 # https://zenn.dev/red_frasco/articles/637837eee794f7
 
