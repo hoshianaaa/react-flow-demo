@@ -13,10 +13,12 @@ First, run the development server:
 
 - yarn install
 
+https://www.suzu6.net/posts/128-ubuntu-yarn-error/
 
 ```
-sudo apt install npm
-sudo npm install -g yarn
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+ sudo apt-get update && sudo apt-get install yarn
 ```
 
 ```bash
