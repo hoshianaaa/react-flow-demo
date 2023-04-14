@@ -10,6 +10,15 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 First, run the development server:
 
+
+- yarn install
+
+
+```
+sudo apt install npm
+sudo npm install -g yarn
+```
+
 ```bash
 npm run dev
 # or
